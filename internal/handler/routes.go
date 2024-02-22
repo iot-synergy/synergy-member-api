@@ -4,16 +4,16 @@ package handler
 import (
 	"net/http"
 
-	base "github.com/suyuan32/simple-admin-member-api/internal/handler/base"
-	captcha "github.com/suyuan32/simple-admin-member-api/internal/handler/captcha"
-	member "github.com/suyuan32/simple-admin-member-api/internal/handler/member"
-	memberrank "github.com/suyuan32/simple-admin-member-api/internal/handler/memberrank"
-	oauthprovider "github.com/suyuan32/simple-admin-member-api/internal/handler/oauthprovider"
-	publicmember "github.com/suyuan32/simple-admin-member-api/internal/handler/publicmember"
-	publicoauth "github.com/suyuan32/simple-admin-member-api/internal/handler/publicoauth"
-	token "github.com/suyuan32/simple-admin-member-api/internal/handler/token"
-	vipdemo "github.com/suyuan32/simple-admin-member-api/internal/handler/vipdemo"
-	"github.com/suyuan32/simple-admin-member-api/internal/svc"
+	base "github.com/iot-synergy/synergy-member-api/internal/handler/base"
+	captcha "github.com/iot-synergy/synergy-member-api/internal/handler/captcha"
+	member "github.com/iot-synergy/synergy-member-api/internal/handler/member"
+	memberrank "github.com/iot-synergy/synergy-member-api/internal/handler/memberrank"
+	oauthprovider "github.com/iot-synergy/synergy-member-api/internal/handler/oauthprovider"
+	publicmember "github.com/iot-synergy/synergy-member-api/internal/handler/publicmember"
+	publicoauth "github.com/iot-synergy/synergy-member-api/internal/handler/publicoauth"
+	token "github.com/iot-synergy/synergy-member-api/internal/handler/token"
+	vipdemo "github.com/iot-synergy/synergy-member-api/internal/handler/vipdemo"
+	"github.com/iot-synergy/synergy-member-api/internal/svc"
 
 	"github.com/zeromicro/go-zero/rest"
 )

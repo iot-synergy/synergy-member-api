@@ -2,11 +2,12 @@ package member
 
 import (
 	"context"
-	"github.com/suyuan32/simple-admin-member-rpc/types/mms"
+
+	"github.com/iot-synergy/synergy-member-rpc/types/mms"
 	"github.com/zeromicro/go-zero/core/errorx"
 
-	"github.com/suyuan32/simple-admin-member-api/internal/svc"
-	"github.com/suyuan32/simple-admin-member-api/internal/types"
+	"github.com/iot-synergy/synergy-member-api/internal/svc"
+	"github.com/iot-synergy/synergy-member-api/internal/types"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )

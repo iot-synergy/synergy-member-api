@@ -5,8 +5,8 @@ import (
 
 	"github.com/zeromicro/go-zero/rest/httpx"
 
-	"github.com/suyuan32/simple-admin-member-api/internal/logic/base"
-	"github.com/suyuan32/simple-admin-member-api/internal/svc"
+	"github.com/iot-synergy/synergy-member-api/internal/logic/base"
+	"github.com/iot-synergy/synergy-member-api/internal/svc"
 )
 
 // swagger:route get /init/database base InitDatabase

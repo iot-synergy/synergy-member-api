@@ -1,7 +1,7 @@
 package middleware
 
 import (
-	"github.com/suyuan32/simple-admin-member-api/internal/enum/memberrank"
+	"github.com/iot-synergy/synergy-member-api/internal/enum/memberrank"
 	"github.com/zeromicro/go-zero/core/errorx"
 	"github.com/zeromicro/go-zero/rest/httpx"
 	"net/http"

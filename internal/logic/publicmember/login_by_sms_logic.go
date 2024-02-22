@@ -2,17 +2,18 @@ package publicmember
 
 import (
 	"context"
-	"github.com/suyuan32/simple-admin-common/config"
-	"github.com/suyuan32/simple-admin-common/enum/common"
-	"github.com/suyuan32/simple-admin-common/i18n"
-	"github.com/suyuan32/simple-admin-common/utils/jwt"
-	"github.com/suyuan32/simple-admin-common/utils/pointy"
-	"github.com/suyuan32/simple-admin-member-rpc/types/mms"
-	"github.com/zeromicro/go-zero/core/errorx"
 	"time"
 
-	"github.com/suyuan32/simple-admin-member-api/internal/svc"
-	"github.com/suyuan32/simple-admin-member-api/internal/types"
+	"github.com/iot-synergy/synergy-common/config"
+	"github.com/iot-synergy/synergy-common/enum/common"
+	"github.com/iot-synergy/synergy-common/i18n"
+	"github.com/iot-synergy/synergy-common/utils/jwt"
+	"github.com/iot-synergy/synergy-common/utils/pointy"
+	"github.com/iot-synergy/synergy-member-rpc/types/mms"
+	"github.com/zeromicro/go-zero/core/errorx"
+
+	"github.com/iot-synergy/synergy-member-api/internal/svc"
+	"github.com/iot-synergy/synergy-member-api/internal/types"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )

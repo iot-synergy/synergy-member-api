@@ -5,9 +5,9 @@ import (
 
 	"github.com/zeromicro/go-zero/rest/httpx"
 
-	"github.com/suyuan32/simple-admin-member-api/internal/logic/member"
-	"github.com/suyuan32/simple-admin-member-api/internal/svc"
-	"github.com/suyuan32/simple-admin-member-api/internal/types"
+	"github.com/iot-synergy/synergy-member-api/internal/logic/member"
+	"github.com/iot-synergy/synergy-member-api/internal/svc"
+	"github.com/iot-synergy/synergy-member-api/internal/types"
 )
 
 // swagger:route post /member/create member CreateMember

@@ -2,11 +2,12 @@ package captcha
 
 import (
 	"context"
-	"github.com/suyuan32/simple-admin-common/enum/errorcode"
-	"github.com/suyuan32/simple-admin-common/i18n"
 
-	"github.com/suyuan32/simple-admin-member-api/internal/svc"
-	"github.com/suyuan32/simple-admin-member-api/internal/types"
+	"github.com/iot-synergy/synergy-common/enum/errorcode"
+	"github.com/iot-synergy/synergy-common/i18n"
+
+	"github.com/iot-synergy/synergy-member-api/internal/svc"
+	"github.com/iot-synergy/synergy-member-api/internal/types"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )

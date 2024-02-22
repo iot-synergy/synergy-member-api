@@ -5,8 +5,8 @@ import (
 
 	"github.com/zeromicro/go-zero/rest/httpx"
 
-	"github.com/suyuan32/simple-admin-member-api/internal/logic/captcha"
-	"github.com/suyuan32/simple-admin-member-api/internal/svc"
+	"github.com/iot-synergy/synergy-member-api/internal/logic/captcha"
+	"github.com/iot-synergy/synergy-member-api/internal/svc"
 )
 
 // swagger:route get /captcha captcha GetCaptcha

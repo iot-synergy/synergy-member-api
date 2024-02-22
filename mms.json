@@ -1111,7 +1111,7 @@
           "x-go-name": "Msg"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "BaseIDInfo": {
       "description": "The base response data | 基础信息",
@@ -1136,7 +1136,7 @@
           "x-go-name": "UpdatedAt"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "BaseListInfo": {
       "description": "The basic response with data | 基础带数据信息",
@@ -1154,7 +1154,7 @@
           "x-go-name": "Total"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "BaseMsgResp": {
       "description": "The basic response without data | 基础不带数据信息",
@@ -1172,7 +1172,7 @@
           "x-go-name": "Msg"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "BaseUUIDInfo": {
       "description": "The base UUID response data | 基础信息",
@@ -1196,7 +1196,7 @@
           "x-go-name": "UpdatedAt"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "BindWechatReq": {
       "description": "Bind wechat request | 绑定微信请求",
@@ -1207,7 +1207,7 @@
           "x-go-name": "Code"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "CallbackInfo": {
       "description": "The oauth callback info response data | Oauth回调数据",
@@ -1250,7 +1250,7 @@
           "x-go-name": "UserId"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "CallbackResp": {
       "description": "The oauth log in response data | 第三方登录返回数据",
@@ -1274,7 +1274,7 @@
           "x-go-name": "Msg"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "CaptchaInfo": {
       "description": "The information of captcha | 验证码数据",
@@ -1289,7 +1289,7 @@
           "x-go-name": "ImgPath"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "CaptchaResp": {
       "description": "The response data of captcha | 验证码返回数据",
@@ -1313,7 +1313,7 @@
           "x-go-name": "Msg"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "EmailCaptchaReq": {
       "description": "The email captcha request | 邮箱验证码请求参数",
@@ -1325,7 +1325,7 @@
           "x-go-name": "Email"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "IDPathReq": {
       "description": "Basic ID request | 基础ID地址参数请求",
@@ -1340,7 +1340,7 @@
           "format": "uint64"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "IDReq": {
       "description": "Basic ID request | 基础ID参数请求",
@@ -1356,7 +1356,7 @@
           "x-go-name": "Id"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "IDsReq": {
       "description": "Basic IDs request | 基础ID数组参数请求",
@@ -1375,7 +1375,7 @@
           "x-go-name": "Ids"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "LoginByEmailReq": {
       "description": "Log in by email request | 邮箱登录参数",
@@ -1398,7 +1398,7 @@
           "x-go-name": "Email"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "LoginBySmsReq": {
       "description": "Log in by SMS request | 短信登录参数",
@@ -1421,7 +1421,7 @@
           "x-go-name": "PhoneNumber"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "LoginInfo": {
       "description": "The log in information | 登陆返回的数据信息",
@@ -1464,7 +1464,7 @@
           "x-go-name": "UserId"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "LoginReq": {
       "description": "Log in request | 登录参数",
@@ -1502,7 +1502,7 @@
           "x-go-name": "Username"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "LoginResp": {
       "description": "The log in response data | 登录返回数据",
@@ -1526,7 +1526,7 @@
           "x-go-name": "Msg"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "MemberInfo": {
       "description": "The response data of member information | 会员信息",
@@ -1592,7 +1592,7 @@
           "x-go-name": "Username"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "MemberInfoResp": {
       "description": "Member information response | 会员信息返回体",
@@ -1616,7 +1616,7 @@
           "x-go-name": "Msg"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "MemberListInfo": {
       "description": "Member list data | 会员列表数据",
@@ -1637,7 +1637,7 @@
           "x-go-name": "Total"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "MemberListReq": {
       "description": "Get member list request params | 会员列表请求参数",
@@ -1687,7 +1687,7 @@
           "x-go-name": "Username"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "MemberListResp": {
       "description": "The response data of member list | 会员列表数据",
@@ -1711,7 +1711,7 @@
           "x-go-name": "Msg"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "MemberRankInfo": {
       "description": "The response data of member rank information | 会员等级信息",
@@ -1761,7 +1761,7 @@
           "x-go-name": "UpdatedAt"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "MemberRankInfoResp": {
       "description": "MemberRank information response | 会员等级信息返回体",
@@ -1785,7 +1785,7 @@
           "x-go-name": "Msg"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "MemberRankListInfo": {
       "description": "MemberRank list data | 会员等级列表数据",
@@ -1806,7 +1806,7 @@
           "x-go-name": "Total"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "MemberRankListReq": {
       "description": "Get member rank list request params | 会员等级列表请求参数",
@@ -1845,7 +1845,7 @@
           "x-go-name": "Remark"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "MemberRankListResp": {
       "description": "The response data of member rank list | 会员等级列表数据",
@@ -1869,7 +1869,7 @@
           "x-go-name": "Msg"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "ModifyProfileReq": {
       "description": "The modify info | 个人信息修改请求",
@@ -1896,7 +1896,7 @@
           "x-go-name": "Nickname"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "OauthLoginReq": {
       "description": "Oauth log in request | Oauth 登录请求",
@@ -1920,7 +1920,7 @@
           "x-go-name": "State"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "OauthProviderInfo": {
       "description": "The response data of oauth provider information | 第三方信息",
@@ -2000,7 +2000,7 @@
           "x-go-name": "UpdatedAt"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "OauthProviderInfoResp": {
       "description": "Oauth provider information response | 第三方信息返回体",
@@ -2024,7 +2024,7 @@
           "x-go-name": "Msg"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "OauthProviderListInfo": {
       "description": "OauthProvider list data | 第三方列表数据",
@@ -2045,7 +2045,7 @@
           "x-go-name": "Total"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "OauthProviderListReq": {
       "description": "Get oauth provider list request params | 第三方列表请求参数",
@@ -2075,7 +2075,7 @@
           "x-go-name": "PageSize"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "OauthProviderListResp": {
       "description": "The response data of oauth provider list | 第三方列表数据",
@@ -2099,7 +2099,7 @@
           "x-go-name": "Msg"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "PageInfo": {
       "description": "The page request parameters | 列表请求参数",
@@ -2123,7 +2123,7 @@
           "x-go-name": "PageSize"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "RedirectInfo": {
       "description": "Redirect information | 跳转网址",
@@ -2134,7 +2134,7 @@
           "type": "string"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "RedirectResp": {
       "description": "Redirect response | 跳转网址返回信息",
@@ -2158,7 +2158,7 @@
           "x-go-name": "Msg"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "RegisterByEmailReq": {
       "description": "Register by email request | 邮箱注册参数",
@@ -2197,7 +2197,7 @@
           "x-go-name": "Username"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "RegisterBySmsReq": {
       "description": "Register by SMS request | 短信注册参数",
@@ -2236,7 +2236,7 @@
           "x-go-name": "Username"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "RegisterReq": {
       "description": "Register request | 注册参数",
@@ -2283,7 +2283,7 @@
           "x-go-name": "Username"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "ResetPasswordByEmailReq": {
       "description": "Reset password by email request | 通过邮箱重置密码请求",
@@ -2302,7 +2302,7 @@
           "x-go-name": "Password"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "ResetPasswordBySmsReq": {
       "description": "Reset password by SMS request | 通过短信重置密码请求",
@@ -2322,7 +2322,7 @@
           "x-go-name": "PhoneNumber"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "SmsCaptchaReq": {
       "description": "The sms captcha request | 短信验证码请求参数",
@@ -2334,7 +2334,7 @@
           "x-go-name": "PhoneNumber"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "TokenInfo": {
       "description": "The response data of token information | Token信息",
@@ -2390,7 +2390,7 @@
           "x-go-name": "Uuid"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "TokenInfoResp": {
       "description": "Token information response | Token信息返回体",
@@ -2414,7 +2414,7 @@
           "x-go-name": "Msg"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "TokenListInfo": {
       "description": "Token list data | Token列表数据",
@@ -2435,7 +2435,7 @@
           "x-go-name": "Total"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "TokenListReq": {
       "description": "Get token list request params | Token列表请求参数",
@@ -2479,7 +2479,7 @@
           "x-go-name": "Uuid"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "TokenListResp": {
       "description": "The response data of token list | Token列表数据",
@@ -2503,7 +2503,7 @@
           "x-go-name": "Msg"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "UUIDReq": {
       "description": "Basic UUID request | 基础UUID参数请求",
@@ -2519,7 +2519,7 @@
           "x-go-name": "Id"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "UUIDsReq": {
       "description": "Basic UUID array request | 基础UUID数组参数请求",
@@ -2537,7 +2537,7 @@
           "x-go-name": "Ids"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
     "WechatMiniProgramLoginReq": {
       "description": "Wechat mini program login request | 微信小程序登录请求",
@@ -2549,7 +2549,7 @@
           "x-go-name": "Code"
         }
       },
-      "x-go-package": "github.com/suyuan32/simple-admin-member-api/internal/types"
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     }
   },
   "responses": {

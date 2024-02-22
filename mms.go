@@ -26,9 +26,9 @@ import (
 	"flag"
 	"fmt"
 
-	"github.com/suyuan32/simple-admin-member-api/internal/config"
-	"github.com/suyuan32/simple-admin-member-api/internal/handler"
-	"github.com/suyuan32/simple-admin-member-api/internal/svc"
+	"github.com/iot-synergy/synergy-member-api/internal/config"
+	"github.com/iot-synergy/synergy-member-api/internal/handler"
+	"github.com/iot-synergy/synergy-member-api/internal/svc"
 
 	"github.com/zeromicro/go-zero/core/conf"
 	"github.com/zeromicro/go-zero/rest"

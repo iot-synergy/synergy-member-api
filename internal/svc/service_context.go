@@ -1,20 +1,20 @@
 package svc
 
 import (
+	"github.com/iot-synergy/oms-core/rpc/coreclient"
+	"github.com/iot-synergy/synergy-common/utils/captcha"
+	"github.com/iot-synergy/synergy-message-center/mcmsclient"
 	"github.com/mojocn/base64Captcha"
 	"github.com/redis/go-redis/v9"
-	"github.com/suyuan32/simple-admin-common/utils/captcha"
-	"github.com/suyuan32/simple-admin-core/rpc/coreclient"
-	"github.com/suyuan32/simple-admin-message-center/mcmsclient"
 	"github.com/zeromicro/go-zero/zrpc"
 
-	"github.com/suyuan32/simple-admin-member-rpc/mmsclient"
+	"github.com/iot-synergy/synergy-member-rpc/mmsclient"
 
-	"github.com/suyuan32/simple-admin-member-api/internal/config"
-	i18n2 "github.com/suyuan32/simple-admin-member-api/internal/i18n"
-	"github.com/suyuan32/simple-admin-member-api/internal/middleware"
+	"github.com/iot-synergy/synergy-member-api/internal/config"
+	i18n2 "github.com/iot-synergy/synergy-member-api/internal/i18n"
+	"github.com/iot-synergy/synergy-member-api/internal/middleware"
 
-	"github.com/suyuan32/simple-admin-common/i18n"
+	"github.com/iot-synergy/synergy-common/i18n"
 
 	"github.com/casbin/casbin/v2"
 	"github.com/zeromicro/go-zero/rest"

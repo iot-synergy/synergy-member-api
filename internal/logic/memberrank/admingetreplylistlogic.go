@@ -2,11 +2,9 @@ package memberrank
 
 import (
 	"context"
-	"github.com/iot-synergy/synergy-member-rpc/types/mms"
-	"strconv"
-
 	"github.com/iot-synergy/synergy-member-api/internal/svc"
 	"github.com/iot-synergy/synergy-member-api/internal/types"
+	"github.com/iot-synergy/synergy-member-rpc/types/mms"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )
@@ -28,7 +26,7 @@ func NewAdminGetReplyListLogic(ctx context.Context, svcCtx *svc.ServiceContext) 
 func (l *AdminGetReplyListLogic) AdminGetReplyList(req *types.ReplyListReqVo) (resp *types.ReplyListRespVo, err error) {
 	// todo: add your logic here and delete this line
 	list, err := l.svcCtx.MmsRpc.AdminGetReplyList(l.ctx, &mms.ReplyReq{
-		//AdminId:  &req.AdminId,
+		AdminId:  &req.AdminId,
 		PageNo:   &req.PageNo,
 		PageSize: &req.PageSize,
 	})
@@ -43,8 +41,8 @@ func (l *AdminGetReplyListLogic) AdminGetReplyList(req *types.ReplyListReqVo) (r
 			Reply:      info.GetReply(),
 			AdminId:    info.GetAdminId(),
 			AdminName:  info.GetAdminName(),
-			CreateTime: strconv.FormatInt(info.GetCreateTime(), 10),
-			UpdateTime: strconv.FormatInt(info.GetUpdateTime(), 10),
+			CreateTime: info.GetCreateTime(),
+			UpdateTime: info.GetUpdateTime(),
 		})
 	}
 

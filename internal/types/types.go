@@ -14,8 +14,8 @@ type ReplyRespVo struct {
 	Reply      string `json:"reply,optional"`
 	AdminId    string `json:"adminId,optional"`
 	AdminName  string `json:"adminName,optional"`
-	CreateTime string `json:"createTime,optional"`
-	UpdateTime string `json:"updateTime,optional"`
+	CreateTime int64  `json:"createTime,optional"`
+	UpdateTime int64  `json:"updateTime,optional"`
 }
 
 type CommentListReqVo struct {
@@ -43,9 +43,9 @@ type CommentRespVo struct {
 }
 
 type ReplyListReqVo struct {
-	AdminId  int32 `json:"adminId,optional"`
-	PageNo   int64 `json:"pageNo,optional"`
-	PageSize int64 `json:"pageSize,optional"`
+	AdminId  string `json:"adminId,optional"`
+	PageNo   int64  `json:"pageNo,optional"`
+	PageSize int64  `json:"pageSize,optional"`
 }
 
 type ReplyListRespVo struct {

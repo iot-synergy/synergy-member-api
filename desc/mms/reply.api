@@ -13,8 +13,8 @@ type (
 		Reply      string `json:"reply,optional"`
 		AdminId    string `json:"adminId,optional"`
 		AdminName  string `json:"adminName,optional"`
-		CreateTime string `json:"createTime,optional"`
-		UpdateTime string `json:"updateTime,optional"`
+		CreateTime int64  `json:"createTime,optional"`
+		UpdateTime int64  `json:"updateTime,optional"`
 	}
 	commentListReqVo {
 		IsReply  int32 `json:"isReply,optional"`
@@ -37,9 +37,9 @@ type (
 		Reply       []replyRespVo `json:"reply,repeated"`
 	}
 	replyListReqVo {
-		AdminId  int32 `json:"adminId,optional"`
-		PageNo   int64 `json:"pageNo,optional"`
-		PageSize int64 `json:"pageSize,optional"`
+		AdminId  string `json:"adminId,optional"`
+		PageNo   int64  `json:"pageNo,optional"`
+		PageSize int64  `json:"pageSize,optional"`
 	}
 	replyListRespVo {
 		ReplyList []replyRespVo `json:"replyList,repeated"`

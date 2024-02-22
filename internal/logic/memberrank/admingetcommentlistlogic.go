@@ -2,11 +2,9 @@ package memberrank
 
 import (
 	"context"
-	"github.com/iot-synergy/synergy-member-rpc/types/mms"
-	"strconv"
-
 	"github.com/iot-synergy/synergy-member-api/internal/svc"
 	"github.com/iot-synergy/synergy-member-api/internal/types"
+	"github.com/iot-synergy/synergy-member-rpc/types/mms"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )
@@ -48,8 +46,8 @@ func (l *AdminGetCommentListLogic) AdminGetCommentList(req *types.CommentListReq
 				Reply:      replyInfo.GetReply(),
 				AdminId:    replyInfo.GetAdminId(),
 				AdminName:  replyInfo.GetAdminName(),
-				CreateTime: strconv.FormatInt(replyInfo.GetCreateTime(), 10),
-				UpdateTime: strconv.FormatInt(replyInfo.GetUpdateTime(), 10),
+				CreateTime: replyInfo.GetCreateTime(),
+				UpdateTime: info.GetUpdateTime(),
 			})
 		}
 		vos = append(vos, types.CommentRespVo{

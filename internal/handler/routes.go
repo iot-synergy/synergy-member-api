@@ -58,6 +58,26 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 					Path:    "/member",
 					Handler: member.GetMemberByIdHandler(serverCtx),
 				},
+				{
+					Method:  http.MethodPost,
+					Path:    "/reply",
+					Handler: memberrank.ReplyCommentHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodPost,
+					Path:    "/admin_get/comment_list",
+					Handler: memberrank.AdminGetCommentListHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodPost,
+					Path:    "/admin_get/comment",
+					Handler: memberrank.AdminGetCommentHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodPost,
+					Path:    "/admin_get/reply_list",
+					Handler: memberrank.AdminGetReplyListHandler(serverCtx),
+				},
 			}...,
 		),
 		rest.WithJwt(serverCtx.Config.Auth.AccessSecret),
@@ -69,6 +89,11 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 				Method:  http.MethodPost,
 				Path:    "/member/profile",
 				Handler: member.ModifyProfileHandler(serverCtx),
+			},
+			{
+				Method:  http.MethodGet,
+				Path:    "/init/database",
+				Handler: base.InitDatabaseHandler(serverCtx),
 			},
 			{
 				Method:  http.MethodGet,

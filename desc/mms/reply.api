@@ -1,0 +1,64 @@
+import "../base.api"
+
+type (
+	replyReqVo {
+		CommentId int64  `json:"commentId,optional"`
+		Reply     string `json:"reply,optional"`
+		AdminId   string `json:"adminId,optional"`
+		AdminName string `json:"adminName,optional"`
+	}
+	replyRespVo {
+		Id         int64  `json:"id,optional"`
+		CommentId  int64  `json:"commentId,optional"`
+		Reply      string `json:"reply,optional"`
+		AdminId    string `json:"adminId,optional"`
+		AdminName  string `json:"adminName,optional"`
+		CreateTime string `json:"createTime,optional"`
+		UpdateTime string `json:"updateTime,optional"`
+	}
+	commentListReqVo {
+		IsReply  int32 `json:"isReply,optional"`
+		PageNo   int64 `json:"pageNo,optional"`
+		PageSize int64 `json:"pageSize,optional"`
+	}
+	commentListRespVo {
+		CommentList []commentRespVo `json:"commentList,repeated"`
+	}
+	commentIdReqVo {
+		Id int64 `json:"id,optional"`
+	}
+	commentRespVo {
+		Id          int64         `json:"id,optional"`
+		Title       string        `json:"title,optional"`
+		Content     string        `json:"content,optional"`
+		MemberId    string        `json:"memberId,optional"`
+		Create_time int64         `json:"createTime,optional"`
+		Update_time int64         `json:"updateTime,optional"`
+		Reply       []replyRespVo `json:"reply,repeated"`
+	}
+	replyListReqVo {
+		AdminId  int32 `json:"adminId,optional"`
+		PageNo   int64 `json:"pageNo,optional"`
+		PageSize int64 `json:"pageSize,optional"`
+	}
+	replyListRespVo {
+		ReplyList []replyRespVo `json:"replyList,repeated"`
+	}
+)
+
+@server(
+	jwt: Auth
+	group: memberrank
+	middleware: Authority
+)
+
+service Mms {
+	@handler replyComment
+	post /reply (replyReqVo) returns (string);
+	@handler adminGetCommentList
+	post /admin_get/comment_list (commentListReqVo) returns (commentListRespVo);
+	@handler adminGetComment
+	post /admin_get/comment (commentIdReqVo) returns (commentRespVo);
+	@handler adminGetReplyList
+	post /admin_get/reply_list (replyListReqVo) returns (replyListRespVo);
+}

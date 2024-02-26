@@ -61,5 +61,5 @@ func (l *AdminGetCommentListLogic) AdminGetCommentList(req *types.CommentListReq
 		})
 	}
 
-	return &types.CommentListRespVo{CommentList: make([]types.CommentRespVo, 0)}, err
+	return &types.CommentListRespVo{CommentList: vos}, err
 }

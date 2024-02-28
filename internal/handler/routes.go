@@ -67,6 +67,31 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 		[]rest.Route{
 			{
 				Method:  http.MethodPost,
+				Path:    "/reply",
+				Handler: memberrank.ReplyCommentHandler(serverCtx),
+			},
+			{
+				Method:  http.MethodPost,
+				Path:    "/admin_get/comment_list",
+				Handler: memberrank.AdminGetCommentListHandler(serverCtx),
+			},
+			{
+				Method:  http.MethodPost,
+				Path:    "/admin_get/comment",
+				Handler: memberrank.AdminGetCommentHandler(serverCtx),
+			},
+			{
+				Method:  http.MethodPost,
+				Path:    "/admin_get/reply_list",
+				Handler: memberrank.AdminGetReplyListHandler(serverCtx),
+			},
+		},
+		)
+
+	server.AddRoutes(
+		[]rest.Route{
+			{
+				Method:  http.MethodPost,
 				Path:    "/member/profile",
 				Handler: member.ModifyProfileHandler(serverCtx),
 			},

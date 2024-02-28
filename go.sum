@@ -248,8 +248,8 @@ github.com/iot-synergy/oms-core v1.3.3 h1:JYs/WILtCZELLPS3MzhY4ioqBMyeJWSb/cTvSM
 github.com/iot-synergy/oms-core v1.3.3/go.mod h1:JTgR83xv3kcuF/qI2v5oRJ4XfNvyLzsb8XIMbNKDvOI=
 github.com/iot-synergy/synergy-common v1.3.3 h1:FBZi1w/UA7O0mHSsXIc+ODFPnb5r60YWCcrJd1SThYM=
 github.com/iot-synergy/synergy-common v1.3.3/go.mod h1:TtDMJtrUmB23qWtXmrgR0fUOC9sbKH+uR5x5PGcjzqg=
-github.com/iot-synergy/synergy-member-rpc v1.3.3 h1:UMhc1ghzdfL8YHaOPj5BzQJKzfnWueUNp19XH8IShoY=
-github.com/iot-synergy/synergy-member-rpc v1.3.3/go.mod h1:xhG2Kt0oEkEfs28pf3rcNhzyixQicJyFp5rw7DeYSGo=
+github.com/iot-synergy/synergy-member-rpc v1.3.4 h1:O83Ws6zjTybfYdZZHQ0mxx/vd+RAfbIKqZ9MPqwWG8c=
+github.com/iot-synergy/synergy-member-rpc v1.3.4/go.mod h1:xhG2Kt0oEkEfs28pf3rcNhzyixQicJyFp5rw7DeYSGo=
 github.com/iot-synergy/synergy-message-center v1.3.3 h1:7orFo9z5xwujLFZ5tpoyRtPLb3fEJFwEAtbLw1zWMh8=
 github.com/iot-synergy/synergy-message-center v1.3.3/go.mod h1:rUKPS/3QGxnkIRuiFDZs6TcJdxvjVehu1cwUxs0FyTI=
 github.com/jackc/chunkreader v1.0.0/go.mod h1:RT6O25fNZIuasFJRyZ4R/Y2BbhasbmZXF9QQ7T3kePo=

@@ -9,7 +9,7 @@ require (
 	github.com/duke-git/lancet/v2 v2.2.8
 	github.com/iot-synergy/oms-core v1.3.3
 	github.com/iot-synergy/synergy-common v1.3.3
-	github.com/iot-synergy/synergy-member-rpc v1.3.3
+	github.com/iot-synergy/synergy-member-rpc v1.3.4
 	github.com/iot-synergy/synergy-message-center v1.3.3
 	github.com/mojocn/base64Captcha v1.3.6
 	github.com/redis/go-redis/v9 v9.4.0

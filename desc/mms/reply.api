@@ -53,7 +53,7 @@ type (
 )
 service Mms {
 	@handler replyComment
-	post /admin/replyComment (replyReqVo) returns (string)
+	post /admin/replyComment (replyReqVo) returns (BaseMsgResp)
 
 	@handler adminGetCommentList
 	post /admin/CommentList (commentListReqVo) returns (commentListRespVo)

@@ -2,6 +2,7 @@ package memberrank
 
 import (
 	"context"
+	"time"
 
 	"github.com/iot-synergy/synergy-member-api/internal/svc"
 	"github.com/iot-synergy/synergy-member-api/internal/types"
@@ -24,21 +25,31 @@ func NewReplyCommentLogic(ctx context.Context, svcCtx *svc.ServiceContext) *Repl
 	}
 }
 
-func (l *ReplyCommentLogic) ReplyComment(req *types.ReplyReqVo) (resp string, err error) {
+func (l *ReplyCommentLogic) ReplyComment(req *types.ReplyReqVo) (resp *types.BaseMsgResp, err error) {
 	// todo: add your logic here and delete this line
 	userId := l.ctx.Value("userId").(string)
-	comment, err := l.svcCtx.MmsRpc.ReplyComment(l.ctx,
+	now := time.Now().Unix()
+	_, err = l.svcCtx.MmsRpc.ReplyComment(l.ctx,
 		&mms.ReplyInfo{
-			CommentId: &req.CommentId,
-			Reply:     &req.Reply,
-			AdminId:   &userId,
-			AdminName: &req.AdminName,
+			Id:         new(int64),
+			CommentId:  &req.CommentId,
+			Reply:      &req.Reply,
+			AdminId:    &userId,
+			AdminName:  &req.AdminName,
+			CreateTime: &now,
+			UpdateTime: &now,
 		},
 	)
 
 	if err != nil {
-		return "", err
+		return &types.BaseMsgResp{
+			Code: -1,
+			Msg:  err.Error(),
+		}, err
 	}
 
-	return comment.Msg, err
+	return &types.BaseMsgResp{
+		Code: 0,
+		Msg:  "",
+	}, err
 }

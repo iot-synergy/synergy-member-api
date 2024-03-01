@@ -25,8 +25,9 @@ func NewAdminGetReplyListLogic(ctx context.Context, svcCtx *svc.ServiceContext) 
 
 func (l *AdminGetReplyListLogic) AdminGetReplyList(req *types.ReplyListReqVo) (resp *types.ReplyListRespVo, err error) {
 	// todo: add your logic here and delete this line
+	userId := l.ctx.Value("userId").(string)
 	list, err := l.svcCtx.MmsRpc.AdminGetReplyList(l.ctx, &mms.ReplyReq{
-		AdminId:  &req.AdminId,
+		AdminId:  &userId,
 		PageNo:   &req.PageNo,
 		PageSize: &req.PageSize,
 	})

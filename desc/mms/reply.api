@@ -46,19 +46,22 @@ type (
 	}
 )
 
-@server(
-	jwt: Auth
-	group: memberrank
+@server (
+	jwt:        Auth
+	group:      memberrank
 	middleware: Authority
 )
-
 service Mms {
 	@handler replyComment
-	post /reply (replyReqVo) returns (string);
+	post /admin/replyComment (replyReqVo) returns (string)
+
 	@handler adminGetCommentList
-	post /admin_get/comment_list (commentListReqVo) returns (commentListRespVo);
+	post /admin/CommentList (commentListReqVo) returns (commentListRespVo)
+
 	@handler adminGetComment
-	post /admin_get/comment (commentIdReqVo) returns (commentRespVo);
+	post /admin/commentDetail (commentIdReqVo) returns (commentRespVo)
+
 	@handler adminGetReplyList
-	post /admin_get/reply_list (replyListReqVo) returns (replyListRespVo);
+	post /admin/replyList (replyListReqVo) returns (replyListRespVo)
 }
+

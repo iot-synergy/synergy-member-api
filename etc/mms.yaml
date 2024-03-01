@@ -4,7 +4,7 @@ Port: 9104
 Timeout: 30000
 
 Auth:
-  AccessSecret:  # the same as core
+  AccessSecret:  jS6VKDtsJf3z1n2VKDtsJf3z1n3 # the same as core
   AccessExpire: 259200
 
 CROSConf:
@@ -27,11 +27,11 @@ Prometheus:
 # The database config of casbin
 DatabaseConf:
   Type: mysql
-  Host: database-1.chwxvihnhaot.us-east-2.rds.amazonaws.com
+  Host: 192.168.10.181
   Port: 3306
   DBName: peckperk
-  Username: peckperk # set your username
-  Password: peckperk # set your password
+  Username: root # set your username
+  Password: "123456" # set your password
   MaxOpenConn: 100
   SSLMode: disable
   CacheTime: 5
@@ -64,20 +64,23 @@ ProjectConf:
   AllowInit: true
 
 RedisConf:
-  Host: redis.synergy-prod:6379
+  Host: 192.168.10.181:6379
   Db: 1
 
 MmsRpc:
   # Target: k8s://default/mms-rpc-svc:9103
-  Endpoints: synergy-mms-rpc.synergy-sit:9103
+  Endpoints: 
+    - 192.168.10.181:9103
   Enabled: true
 
 CoreRpc:
-  Endpoints: oms-core-rpc.synergy-sit:9101
+  Endpoints: 
+    - 192.168.10.181:9101
   Enabled: true
 
 McmsRpc:
   # Target: k8s://default/mcms-rpc-svc:9106
-  Endpoints: synergy-mcms-rpc.synergy-sit:9106
+  Endpoints: 
+    - 192.168.10.181:9106
   Enabled: false
   Timeout: 5000

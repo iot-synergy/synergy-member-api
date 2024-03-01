@@ -64,29 +64,33 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 	)
 
 	server.AddRoutes(
-		[]rest.Route{
-			{
-				Method:  http.MethodPost,
-				Path:    "/reply",
-				Handler: memberrank.ReplyCommentHandler(serverCtx),
-			},
-			{
-				Method:  http.MethodPost,
-				Path:    "/admin_get/comment_list",
-				Handler: memberrank.AdminGetCommentListHandler(serverCtx),
-			},
-			{
-				Method:  http.MethodPost,
-				Path:    "/admin_get/comment",
-				Handler: memberrank.AdminGetCommentHandler(serverCtx),
-			},
-			{
-				Method:  http.MethodPost,
-				Path:    "/admin_get/reply_list",
-				Handler: memberrank.AdminGetReplyListHandler(serverCtx),
-			},
-		},
-		)
+		rest.WithMiddlewares(
+			[]rest.Middleware{serverCtx.Authority},
+			[]rest.Route{
+				{
+					Method:  http.MethodPost,
+					Path:    "/admin/CommentList",
+					Handler: memberrank.AdminGetCommentListHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodPost,
+					Path:    "/admin/commentDetail",
+					Handler: memberrank.AdminGetCommentHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodPost,
+					Path:    "/admin/replyComment",
+					Handler: memberrank.ReplyCommentHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodPost,
+					Path:    "/admin/replyList",
+					Handler: memberrank.AdminGetReplyListHandler(serverCtx),
+				},
+			}...,
+		),
+		rest.WithJwt(serverCtx.Config.Auth.AccessSecret),
+	)
 
 	server.AddRoutes(
 		[]rest.Route{

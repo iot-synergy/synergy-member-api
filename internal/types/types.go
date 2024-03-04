@@ -19,13 +19,17 @@ type ReplyRespVo struct {
 }
 
 type CommentListReqVo struct {
-	IsReply  int32 `json:"isReply,optional"`
-	PageNo   int64 `json:"pageNo,optional"`
-	PageSize int64 `json:"pageSize,optional"`
+	IsReply int32 `json:"isReply,optional"`
+	PageInfo
 }
 
 type CommentListRespVo struct {
-	CommentList []CommentRespVo `json:"commentList,repeated"`
+	BaseMsgResp
+	Data CommentListRespData `json:"data,optional"`
+}
+
+type CommentListRespData struct {
+	List []CommentRespData `json:"commentList,repeated"`
 }
 
 type CommentIdReqVo struct {
@@ -33,6 +37,11 @@ type CommentIdReqVo struct {
 }
 
 type CommentRespVo struct {
+	BaseMsgResp
+	Data CommentRespData `json:"data,optional"`
+}
+
+type CommentRespData struct {
 	Id          int64         `json:"id,optional"`
 	Title       string        `json:"title,optional"`
 	Content     string        `json:"content,optional"`
@@ -43,13 +52,17 @@ type CommentRespVo struct {
 }
 
 type ReplyListReqVo struct {
-	AdminId  string `json:"adminId,optional"`
-	PageNo   int64  `json:"pageNo,optional"`
-	PageSize int64  `json:"pageSize,optional"`
+	AdminId string `json:"adminId,optional"`
+	PageInfo
 }
 
 type ReplyListRespVo struct {
-	ReplyList []ReplyRespVo `json:"replyList,repeated"`
+	BaseMsgResp
+	Data ReplyListRespData `json:"data,optional"`
+}
+
+type ReplyListRespData struct {
+	List []ReplyRespVo `json:"replyList,repeated"`
 }
 
 // The basic response with data | 基础带数据信息

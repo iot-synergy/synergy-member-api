@@ -28,7 +28,12 @@ func (l *AdminGetCommentLogic) AdminGetComment(req *types.CommentIdReqVo) (resp 
 	comment, err := l.svcCtx.MmsRpc.AdminGetComment(l.ctx, &mms.CommentIdReq{Id: &req.Id})
 
 	if err != nil {
-		return nil, err
+		return &types.CommentRespVo{
+			BaseMsgResp: types.BaseMsgResp{
+				Code: -1,
+				Msg:  err.Error(),
+			},
+		}, nil
 	}
 	vos := make([]types.ReplyRespVo, 0)
 	reply := comment.GetReply()
@@ -44,12 +49,18 @@ func (l *AdminGetCommentLogic) AdminGetComment(req *types.CommentIdReqVo) (resp 
 		})
 	}
 	return &types.CommentRespVo{
-		Id:          comment.GetId(),
-		Title:       comment.GetTitle(),
-		Content:     comment.GetContent(),
-		MemberId:    comment.GetMemberId(),
-		Create_time: comment.GetCreateTime(),
-		Update_time: comment.GetUpdateTime(),
-		Reply:       vos,
-	}, err
+		BaseMsgResp: types.BaseMsgResp{
+			Code: 0,
+			Msg:  "成功",
+		},
+		Data: types.CommentRespData{
+			Id:          comment.GetId(),
+			Title:       comment.GetTitle(),
+			Content:     comment.GetContent(),
+			MemberId:    comment.GetMemberId(),
+			Create_time: comment.GetCreateTime(),
+			Update_time: comment.GetUpdateTime(),
+			Reply:       vos,
+		},
+	}, nil
 }

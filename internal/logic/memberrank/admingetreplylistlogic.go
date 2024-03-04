@@ -26,13 +26,20 @@ func NewAdminGetReplyListLogic(ctx context.Context, svcCtx *svc.ServiceContext) 
 func (l *AdminGetReplyListLogic) AdminGetReplyList(req *types.ReplyListReqVo) (resp *types.ReplyListRespVo, err error) {
 	// todo: add your logic here and delete this line
 	userId := l.ctx.Value("userId").(string)
+	page := int64(req.Page)
+	pageSize := int64(req.PageSize)
 	list, err := l.svcCtx.MmsRpc.AdminGetReplyList(l.ctx, &mms.ReplyReq{
 		AdminId:  &userId,
-		PageNo:   &req.PageNo,
-		PageSize: &req.PageSize,
+		Page:     &page,
+		PageSize: &pageSize,
 	})
 	if err != nil {
-		return nil, err
+		return &types.ReplyListRespVo{
+			BaseMsgResp: types.BaseMsgResp{
+				Code: -1,
+				Msg:  err.Error(),
+			},
+		}, nil
 	}
 	vos := make([]types.ReplyRespVo, 0)
 	for _, info := range list.ReplyList {
@@ -47,5 +54,11 @@ func (l *AdminGetReplyListLogic) AdminGetReplyList(req *types.ReplyListReqVo) (r
 		})
 	}
 
-	return &types.ReplyListRespVo{ReplyList: vos}, nil
+	return &types.ReplyListRespVo{
+		BaseMsgResp: types.BaseMsgResp{
+			Code: 0,
+			Msg:  "成功",
+		},
+		Data: types.ReplyListRespData{vos},
+	}, nil
 }

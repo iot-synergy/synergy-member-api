@@ -25,18 +25,25 @@ func NewAdminGetCommentListLogic(ctx context.Context, svcCtx *svc.ServiceContext
 
 func (l *AdminGetCommentListLogic) AdminGetCommentList(req *types.CommentListReqVo) (resp *types.CommentListRespVo, err error) {
 	// todo: add your logic here and delete this line
+	page := int64(req.Page)
+	pageSize := int64(req.PageSize)
 	list, err := l.svcCtx.MmsRpc.AdminGetCommentList(l.ctx, &mms.CommentListReq{
 		IsReply:  &req.IsReply,
-		PageNo:   &req.PageNo,
-		PageSize: &req.PageSize,
+		Page:     &page,
+		PageSize: &pageSize,
 	})
 
 	if err != nil {
-		return nil, err
+		return &types.CommentListRespVo{
+			BaseMsgResp: types.BaseMsgResp{
+				Code: -1,
+				Msg:  err.Error(),
+			},
+		}, nil
 	}
 
-	vos := make([]types.CommentRespVo, 0)
-	for _, info := range list.Titles {
+	vos := make([]types.CommentRespData, 0)
+	for _, info := range list.List {
 		reply := info.GetReply()
 		respVos := make([]types.ReplyRespVo, 0)
 		for _, replyInfo := range reply {
@@ -50,7 +57,7 @@ func (l *AdminGetCommentListLogic) AdminGetCommentList(req *types.CommentListReq
 				UpdateTime: info.GetUpdateTime(),
 			})
 		}
-		vos = append(vos, types.CommentRespVo{
+		vos = append(vos, types.CommentRespData{
 			Id:          info.GetId(),
 			Title:       info.GetTitle(),
 			Content:     info.GetContent(),
@@ -61,5 +68,11 @@ func (l *AdminGetCommentListLogic) AdminGetCommentList(req *types.CommentListReq
 		})
 	}
 
-	return &types.CommentListRespVo{CommentList: vos}, err
+	return &types.CommentListRespVo{
+		BaseMsgResp: types.BaseMsgResp{
+			Code: 0,
+			Msg:  "成功",
+		},
+		Data: types.CommentListRespData{List: vos},
+	}, nil
 }

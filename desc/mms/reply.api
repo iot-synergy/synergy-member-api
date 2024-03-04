@@ -17,17 +17,28 @@ type (
 		UpdateTime int64  `json:"updateTime,optional"`
 	}
 	commentListReqVo {
-		IsReply  int32 `json:"isReply,optional"`
-		PageNo   int64 `json:"pageNo,optional"`
-		PageSize int64 `json:"pageSize,optional"`
+		IsReply int32 `json:"isReply,optional"`
+		PageInfo
 	}
 	commentListRespVo {
-		CommentList []commentRespVo `json:"commentList,repeated"`
+		BaseMsgResp
+		Data commentListRespData `json:"data,optional"`
 	}
+
+	commentListRespData {
+		List []commentRespData `json:"commentList,repeated"`
+	}
+
 	commentIdReqVo {
 		Id int64 `json:"id,optional"`
 	}
+
 	commentRespVo {
+		BaseMsgResp
+		Data commentRespData `json:"data,optional"`
+	}
+
+	commentRespData {
 		Id          int64         `json:"id,optional"`
 		Title       string        `json:"title,optional"`
 		Content     string        `json:"content,optional"`
@@ -37,12 +48,15 @@ type (
 		Reply       []replyRespVo `json:"reply,repeated"`
 	}
 	replyListReqVo {
-		AdminId  string `json:"adminId,optional"`
-		PageNo   int64  `json:"pageNo,optional"`
-		PageSize int64  `json:"pageSize,optional"`
+		AdminId string `json:"adminId,optional"`
+		PageInfo
 	}
 	replyListRespVo {
-		ReplyList []replyRespVo `json:"replyList,repeated"`
+		BaseMsgResp
+		Data replyListRespData `json:"data,optional"`
+	}
+	replyListRespData {
+		List []replyRespVo `json:"replyList,repeated"`
 	}
 )
 
@@ -54,14 +68,13 @@ type (
 service Mms {
 	@handler replyComment
 	post /admin/replyComment (replyReqVo) returns (BaseMsgResp)
-
+	
 	@handler adminGetCommentList
 	post /admin/CommentList (commentListReqVo) returns (commentListRespVo)
-
+	
 	@handler adminGetComment
 	post /admin/commentDetail (commentIdReqVo) returns (commentRespVo)
-
+	
 	@handler adminGetReplyList
 	post /admin/replyList (replyListReqVo) returns (replyListRespVo)
 }
-

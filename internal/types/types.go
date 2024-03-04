@@ -29,7 +29,8 @@ type CommentListRespVo struct {
 }
 
 type CommentListRespData struct {
-	List []CommentRespData `json:"commentList,repeated"`
+	Data  []CommentRespData `json:"Data,repeated"`
+	Total int               `json:"tatal,optional"`
 }
 
 type CommentIdReqVo struct {

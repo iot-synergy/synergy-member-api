@@ -73,6 +73,9 @@ func (l *AdminGetCommentListLogic) AdminGetCommentList(req *types.CommentListReq
 			Code: 0,
 			Msg:  "成功",
 		},
-		Data: types.CommentListRespData{List: vos},
+		Data: types.CommentListRespData{
+			Data:  vos,
+			Total: len(vos),
+		},
 	}, nil
 }

@@ -26,7 +26,8 @@ type (
 	}
 
 	commentListRespData {
-		List []commentRespData `json:"commentList,repeated"`
+		Data  []commentRespData `json:"Data,repeated"`
+		Total int               `json:"tatal,optional"`
 	}
 
 	commentIdReqVo {

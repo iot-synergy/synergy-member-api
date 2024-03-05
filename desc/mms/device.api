@@ -49,6 +49,6 @@ type QueryReq {
 service Mms {
 	// Get captcha | 获取验证码
 	@handler queryLocalDevices
-	post /queryLocalDevices (QueryReq) returns (DeviceListResp)
+	post /device/queryLocalDevices (QueryReq) returns (DeviceListResp)
 }
 

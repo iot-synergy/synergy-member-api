@@ -326,7 +326,7 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 			[]rest.Route{
 				{
 					Method:  http.MethodPost,
-					Path:    "/queryLocalDevices",
+					Path:    "/device/queryLocalDevices",
 					Handler: device.QueryLocalDevicesHandler(serverCtx),
 				},
 			}...,

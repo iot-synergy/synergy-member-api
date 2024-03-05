@@ -20,6 +20,7 @@ type Config struct {
 	Captcha      captcha.Conf
 	ProjectConf  ProjectConf
 	CROSConf     config.CROSConf
+	AddxProxyRpc zrpc.RpcClientConf
 }
 
 type ProjectConf struct {

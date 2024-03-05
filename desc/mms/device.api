@@ -34,6 +34,13 @@ type DeviceListResp {
 	Data []DeviceSummary `json:"data"`
 }
 
+type QueryReq {
+	PageInfo
+	Owner          string `json:"owner,omitempty"`
+	ActivatedTime  int64  `json:"activatedTime,omitempty"`
+	DeviceVipLevel int64  `json:"deviceVipLevel,omitempty"`
+}
+
 @server (
 	group:      device
 	jwt:        Auth
@@ -42,6 +49,6 @@ type DeviceListResp {
 service Mms {
 	// Get captcha | 获取验证码
 	@handler queryLocalDevices
-	post /queryLocalDevices returns (DeviceListResp)
+	post /queryLocalDevices (QueryReq) returns (DeviceListResp)
 }
 

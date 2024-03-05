@@ -2,6 +2,7 @@ package svc
 
 import (
 	"github.com/iot-synergy/oms-core/rpc/coreclient"
+	"github.com/iot-synergy/synergy-addx-proxy/synergy_addx_proxy_client"
 	"github.com/iot-synergy/synergy-common/utils/captcha"
 	"github.com/iot-synergy/synergy-message-center/mcmsclient"
 	"github.com/mojocn/base64Captcha"
@@ -31,6 +32,7 @@ type ServiceContext struct {
 	Captcha   *base64Captcha.Captcha
 	CoreRpc   coreclient.Core
 	Redis     redis.UniversalClient
+	AddxProxy synergy_addx_proxy_client.SynergyAddxProxy
 }
 
 func NewServiceContext(c config.Config) *ServiceContext {
@@ -52,5 +54,6 @@ func NewServiceContext(c config.Config) *ServiceContext {
 		Captcha:   captcha.MustNewOriginalRedisCaptcha(c.Captcha, rds),
 		CoreRpc:   coreclient.NewCore(zrpc.NewClientIfEnable(c.CoreRpc)),
 		McmsRpc:   mcmsclient.NewMcms(zrpc.NewClientIfEnable(c.McmsRpc)),
+		AddxProxy: synergy_addx_proxy_client.NewSynergyAddxProxy(zrpc.NewClientIfEnable(c.AddxProxyRpc)),
 	}
 }

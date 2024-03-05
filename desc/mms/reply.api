@@ -4,7 +4,6 @@ type (
 	replyReqVo {
 		CommentId int64  `json:"commentId,optional"`
 		Reply     string `json:"reply,optional"`
-		AdminId   string `json:"adminId,optional"`
 		AdminName string `json:"adminName,optional"`
 	}
 	replyRespVo {
@@ -17,7 +16,10 @@ type (
 		UpdateTime int64  `json:"updateTime,optional"`
 	}
 	commentListReqVo {
-		IsReply int32 `json:"isReply,optional"`
+		IsReply     int32   `json:"isReply,optional"`
+		Title       string  `json:"title,optional"`
+		Content     string  `json:"content,optional"`
+		CommentTime []int64 `json:"commentTime,repeated"`
 		PageInfo
 	}
 	commentListRespVo {
@@ -47,9 +49,10 @@ type (
 		Create_time int64         `json:"createTime,optional"`
 		Update_time int64         `json:"updateTime,optional"`
 		Reply       []replyRespVo `json:"reply,repeated"`
+		IsReply     bool          `json:"isReply,optional"`
 	}
 	replyListReqVo {
-		AdminId string `json:"adminId,optional"`
+		Reply string `json:"reply,optional"`
 		PageInfo
 	}
 	replyListRespVo {

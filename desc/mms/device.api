@@ -10,22 +10,22 @@ import "../base.api"
 
 // The information of captcha | 验证码数据
 type DeviceSummary {
-	AddxId         string `bson:"addxId,omitempty" json:"addxId,omitempty"`
-	SerialNumber   string `bson:"serialNumber,omitempty" json:"serialNumber,omitempty"`
-	Activated      *int64 `bson:"activated,omitempty" json:"activated,omitempty"`
-	ActivatedTime  *int64 `bson:"activatedTime,omitempty" json:"activatedTime,omitempty"`
-	AdminName      string `bson:"adminName,omitempty" json:"adminName,omitempty"`
-	DeviceName     string `bson:"deviceName,omitempty" json:"deviceName,omitempty"`
-	DeviceNetType  int64  `bson:"deviceNetType,omitempty" json:"deviceNetType,omitempty"`
-	DeviceStatus   int64  `bson:"deviceStatus,omitempty" json:"deviceStatus,omitempty"`
-	DeviceVipLevel int64  `bson:"deviceVipLevel,omitempty" json:"deviceVipLevel,omitempty"`
-	FirmwareId     string `bson:"firmwareId,omitempty" json:"firmwareId,omitempty"`
-	FirmwareStatus int64  `bson:"firmwareStatus,omitempty" json:"firmwareStatus,omitempty"`
-	Icon           string `bson:"icon,omitempty" json:"icon,omitempty"`
-	MacAddress     string `bson:"macAddress,omitempty" json:"macAddress,omitempty"`
-	Online         int64  `bson:"online,omitempty" json:"online,omitempty"`
-	PersonDetect   int64  `bson:"personDetect,omitempty" json:"personDetect,omitempty"`
-	SupportBirdVip bool   `bson:"supportBirdVip,omitempty" json:"supportBirdVip,omitempty"`
+	AddxId         string `bson:"addxId,optional" json:"addxId,optional"`
+	SerialNumber   string `bson:"serialNumber,optional" json:"serialNumber,optional"`
+	Activated      *int64 `bson:"activated,optional" json:"activated,optional"`
+	ActivatedTime  *int64 `bson:"activatedTime,optional" json:"activatedTime,optional"`
+	AdminName      string `bson:"adminName,optional" json:"adminName,optional"`
+	DeviceName     string `bson:"deviceName,optional" json:"deviceName,optional"`
+	DeviceNetType  int64  `bson:"deviceNetType,optional" json:"deviceNetType,optional"`
+	DeviceStatus   int64  `bson:"deviceStatus,optional" json:"deviceStatus,optional"`
+	DeviceVipLevel int64  `bson:"deviceVipLevel,optional" json:"deviceVipLevel,optional"`
+	FirmwareId     string `bson:"firmwareId,optional" json:"firmwareId,optional"`
+	FirmwareStatus int64  `bson:"firmwareStatus,optional" json:"firmwareStatus,optional"`
+	Icon           string `bson:"icon,optional" json:"icon,optional"`
+	MacAddress     string `bson:"macAddress,optional" json:"macAddress,optional"`
+	Online         int64  `bson:"online,optional" json:"online,optional"`
+	PersonDetect   int64  `bson:"personDetect,optional" json:"personDetect,optional"`
+	SupportBirdVip bool   `bson:"supportBirdVip,optional" json:"supportBirdVip,optional"`
 }
 
 // The response data of device
@@ -36,9 +36,9 @@ type DeviceListResp {
 
 type QueryReq {
 	PageInfo
-	Owner          string `json:"owner,omitempty"`
-	ActivatedTime  int64  `json:"activatedTime,omitempty"`
-	DeviceVipLevel int64  `json:"deviceVipLevel,omitempty"`
+	Owner          string `json:"owner,optional"`
+	ActivatedTime  int64  `json:"activatedTime,optional"`
+	DeviceVipLevel int64  `json:"deviceVipLevel,optional"`
 }
 
 @server (

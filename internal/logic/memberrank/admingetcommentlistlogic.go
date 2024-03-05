@@ -28,9 +28,12 @@ func (l *AdminGetCommentListLogic) AdminGetCommentList(req *types.CommentListReq
 	page := int64(req.Page)
 	pageSize := int64(req.PageSize)
 	list, err := l.svcCtx.MmsRpc.AdminGetCommentList(l.ctx, &mms.CommentListReq{
-		IsReply:  &req.IsReply,
-		Page:     &page,
-		PageSize: &pageSize,
+		IsReply:     &req.IsReply,
+		Page:        &page,
+		PageSize:    &pageSize,
+		Title:       &req.Title,
+		Content:     &req.Content,
+		CommentTime: req.CommentTime,
 	})
 
 	if err != nil {
@@ -64,6 +67,7 @@ func (l *AdminGetCommentListLogic) AdminGetCommentList(req *types.CommentListReq
 			MemberId:    info.GetMemberId(),
 			Create_time: info.GetCreateTime(),
 			Update_time: info.GetUpdateTime(),
+			IsReply:     info.GetIsReply(),
 			Reply:       respVos,
 		})
 	}

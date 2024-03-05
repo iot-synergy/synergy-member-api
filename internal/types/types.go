@@ -4,7 +4,6 @@ package types
 type ReplyReqVo struct {
 	CommentId int64  `json:"commentId,optional"`
 	Reply     string `json:"reply,optional"`
-	AdminId   string `json:"adminId,optional"`
 	AdminName string `json:"adminName,optional"`
 }
 
@@ -19,7 +18,10 @@ type ReplyRespVo struct {
 }
 
 type CommentListReqVo struct {
-	IsReply int32 `json:"isReply,optional"`
+	IsReply     int32   `json:"isReply,optional"`
+	Title       string  `json:"title,optional"`
+	Content     string  `json:"content,optional"`
+	CommentTime []int64 `json:"commentTime,repeated"`
 	PageInfo
 }
 
@@ -50,6 +52,7 @@ type CommentRespData struct {
 	Create_time int64         `json:"createTime,optional"`
 	Update_time int64         `json:"updateTime,optional"`
 	Reply       []ReplyRespVo `json:"reply,repeated"`
+	IsReply     bool          `json:"isReply,optional"`
 }
 
 type ReplyListReqVo struct {

@@ -45,7 +45,7 @@ func (l *QueryLocalDevicesLogic) QueryLocalDevices(req *types.QueryReq) (resp *t
 	for _, v := range re.Data.List {
 		resp.Data = append(resp.Data,
 			types.DeviceSummary{
-				AddxId:         v.AdminName,
+				AddxId:         v.AddxUserId,
 				SerialNumber:   v.SerialNumber,
 				Activated:      v.Activated,
 				ActivatedTime:  v.ActivatedTime,

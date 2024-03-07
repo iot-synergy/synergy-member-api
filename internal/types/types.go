@@ -21,7 +21,7 @@ type CommentListReqVo struct {
 	IsReply     int32   `json:"isReply,optional"`
 	Title       string  `json:"title,optional"`
 	Content     string  `json:"content,optional"`
-	CommentTime []int64 `json:"commentTime,repeated"`
+	CommentTime []int64 `json:"commentTime,repeated,optional"`
 	PageInfo
 }
 

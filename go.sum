@@ -247,8 +247,8 @@ github.com/hashicorp/serf v0.8.2/go.mod h1:6hOLApaqBFA1NXqRQAsxw9QxuDEvNxSQRwA/J
 github.com/inconshreveable/mousetrap v1.0.0/go.mod h1:PxqpIevigyE2G7u3NXJIT2ANytuPF1OarO4DADm73n8=
 github.com/iot-synergy/oms-core v1.3.3 h1:JYs/WILtCZELLPS3MzhY4ioqBMyeJWSb/cTvSMyTCIA=
 github.com/iot-synergy/oms-core v1.3.3/go.mod h1:JTgR83xv3kcuF/qI2v5oRJ4XfNvyLzsb8XIMbNKDvOI=
-github.com/iot-synergy/synergy-addx-proxy v0.1.0 h1:R1IkrmktG0jMudgmjU4Ole5izTr7Ke9Mvm6ofK2mq/Y=
-github.com/iot-synergy/synergy-addx-proxy v0.1.0/go.mod h1:OKBePhauH7SjA8mUOAnwQNZd7/9wxFSL/jfEQiK4uCc=
+github.com/iot-synergy/synergy-addx-proxy v0.1.2 h1:ISESZUyxPn834WE0fER6ie9rY9tXNzp4SBhF2RpIhm4=
+github.com/iot-synergy/synergy-addx-proxy v0.1.2/go.mod h1:OKBePhauH7SjA8mUOAnwQNZd7/9wxFSL/jfEQiK4uCc=
 github.com/iot-synergy/synergy-common v1.3.3 h1:FBZi1w/UA7O0mHSsXIc+ODFPnb5r60YWCcrJd1SThYM=
 github.com/iot-synergy/synergy-common v1.3.3/go.mod h1:TtDMJtrUmB23qWtXmrgR0fUOC9sbKH+uR5x5PGcjzqg=
 github.com/iot-synergy/synergy-member-rpc v1.3.6 h1:rMK6cgmNhPfrNi2zISvwRg/7vcPbtHmi9jEO5XTQ8+M=

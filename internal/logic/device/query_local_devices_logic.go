@@ -41,6 +41,7 @@ func (l *QueryLocalDevicesLogic) QueryLocalDevices(req *types.QueryReq) (resp *t
 
 	resp = &types.DeviceListResp{}
 	resp.Msg = l.svcCtx.Trans.Trans(l.ctx, i18n.Success)
+	resp.Total = uint64(re.Count)
 
 	for _, v := range re.Data.List {
 		resp.Data = append(resp.Data,

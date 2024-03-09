@@ -31,6 +31,7 @@ type DeviceSummary {
 // The response data of device
 type DeviceListResp {
 	BaseDataInfo
+	BaseListInfo
 	Data []DeviceSummary `json:"data"`
 }
 

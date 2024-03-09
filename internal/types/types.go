@@ -696,6 +696,7 @@ type SmsCaptchaReq struct {
 
 type DeviceListResp struct {
 	BaseDataInfo
+	BaseListInfo
 	Data []DeviceSummary `json:"data"`
 }
 

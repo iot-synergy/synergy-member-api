@@ -60,6 +60,16 @@ type ReplyListReqVo struct {
 	PageInfo
 }
 
+type DeviceVipSetReq struct {
+	SerialNumber string `json:"serialNumber,optional"`
+	ProductId    string `json:"productId,optional"`
+}
+
+type DeviceVipSetUpdateResp struct {
+	BaseMsgResp
+	Data string `json:"data,optional"`
+}
+
 type ReplyListRespVo struct {
 	BaseMsgResp
 	Data ReplyListRespData `json:"data,optional"`

@@ -329,6 +329,11 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 					Path:    "/device/queryLocalDevices",
 					Handler: device.QueryLocalDevicesHandler(serverCtx),
 				},
+				{
+					Method:  http.MethodPost,
+					Path:    "/device/updateDeviceVipSet",
+					Handler: device.UpdateDeviceVipSetHandler(serverCtx),
+				},
 			}...,
 		),
 		rest.WithJwt(serverCtx.Config.Auth.AccessSecret),

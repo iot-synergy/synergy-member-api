@@ -41,6 +41,16 @@ type QueryReq {
 	DeviceVipLevel int64  `json:"deviceVipLevel,optional"`
 }
 
+type DeviceVipSetReq {
+	SerialNumber string `json:"serialNumber,optional"`
+	ProductId    string `json:"productId,optional"`
+}
+
+type DeviceVipSetUpdateResp {
+	BaseMsgResp
+	Data string `json:"data,optional"`
+}
+
 @server (
 	group:      device
 	jwt:        Auth
@@ -50,5 +60,6 @@ service Mms {
 	// Get captcha | 获取验证码
 	@handler queryLocalDevices
 	post /device/queryLocalDevices (QueryReq) returns (DeviceListResp)
+	@handler updateDeviceVipSet
+	post /device/updateDeviceVipSet (DeviceVipSetReq) returns (DeviceVipSetUpdateResp)
 }
-

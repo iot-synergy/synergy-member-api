@@ -52,6 +52,11 @@ type DeviceVipSetUpdateResp {
 	Data string `json:"data,optional"`
 }
 
+type DeviceListQueryReq {
+	AddxUserId   string `json:"addxUserId"`
+	SerialNumber string `json:"serialNumber,optional"`
+}
+
 @server (
 	group:      device
 	jwt:        Auth
@@ -63,4 +68,6 @@ service Mms {
 	post /device/queryLocalDevices (QueryReq) returns (DeviceListResp)
 	@handler updateDeviceVipSet
 	post /device/updateDeviceVipSet (DeviceVipSetReq) returns (DeviceVipSetUpdateResp)
+	@handler queryUserDeviceList
+	post /device/queryUserDeviceList (DeviceListQueryReq) returns (DeviceListResp)
 }

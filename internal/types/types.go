@@ -70,6 +70,11 @@ type DeviceVipSetUpdateResp struct {
 	Data string `json:"data,optional"`
 }
 
+type DeviceListQueryReq struct {
+	AddxUserId   string `json:"addxUserId"`
+	SerialNumber string `json:"serialNumber,optional"`
+}
+
 type ReplyListRespVo struct {
 	BaseMsgResp
 	Data ReplyListRespData `json:"data,optional"`

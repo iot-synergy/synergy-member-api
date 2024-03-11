@@ -79,7 +79,7 @@ func (l *AdminGetCommentListLogic) AdminGetCommentList(req *types.CommentListReq
 		},
 		Data: types.CommentListRespData{
 			Data:  vos,
-			Total: len(vos),
+			Total: int(*list.Count),
 		},
 	}, nil
 }

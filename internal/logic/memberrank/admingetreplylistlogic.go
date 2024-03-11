@@ -59,6 +59,9 @@ func (l *AdminGetReplyListLogic) AdminGetReplyList(req *types.ReplyListReqVo) (r
 			Code: 0,
 			Msg:  "成功",
 		},
-		Data: types.ReplyListRespData{vos},
+		Data: types.ReplyListRespData{
+			List:  vos,
+			Total: int(*list.Count),
+		},
 	}, nil
 }

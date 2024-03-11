@@ -10,7 +10,7 @@ require (
 	github.com/iot-synergy/oms-core v1.3.3
 	github.com/iot-synergy/synergy-addx-proxy v0.1.2
 	github.com/iot-synergy/synergy-common v1.3.3
-	github.com/iot-synergy/synergy-member-rpc v1.3.6
+	github.com/iot-synergy/synergy-member-rpc v1.3.7
 	github.com/iot-synergy/synergy-message-center v1.3.3
 	github.com/mojocn/base64Captcha v1.3.6
 	github.com/redis/go-redis/v9 v9.4.0
@@ -35,7 +35,7 @@ require (
 	github.com/emicklei/go-restful/v3 v3.11.0 // indirect
 	github.com/fatih/color v1.16.0 // indirect
 	github.com/gabriel-vasile/mimetype v1.4.2 // indirect
-	github.com/go-logr/logr v1.3.0 // indirect
+	github.com/go-logr/logr v1.4.1 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
 	github.com/go-openapi/inflect v0.19.0 // indirect
 	github.com/go-openapi/jsonpointer v0.19.6 // indirect
@@ -91,15 +91,15 @@ require (
 	go.etcd.io/etcd/api/v3 v3.5.12 // indirect
 	go.etcd.io/etcd/client/pkg/v3 v3.5.12 // indirect
 	go.etcd.io/etcd/client/v3 v3.5.12 // indirect
-	go.opentelemetry.io/otel v1.21.0 // indirect
-	go.opentelemetry.io/otel/exporters/otlp/otlptrace v1.21.0 // indirect
-	go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc v1.21.0 // indirect
-	go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp v1.21.0 // indirect
-	go.opentelemetry.io/otel/exporters/stdout/stdouttrace v1.21.0 // indirect
-	go.opentelemetry.io/otel/exporters/zipkin v1.21.0 // indirect
-	go.opentelemetry.io/otel/metric v1.21.0 // indirect
-	go.opentelemetry.io/otel/sdk v1.21.0 // indirect
-	go.opentelemetry.io/otel/trace v1.21.0 // indirect
+	go.opentelemetry.io/otel v1.22.0 // indirect
+	go.opentelemetry.io/otel/exporters/otlp/otlptrace v1.22.0 // indirect
+	go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc v1.22.0 // indirect
+	go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp v1.22.0 // indirect
+	go.opentelemetry.io/otel/exporters/stdout/stdouttrace v1.22.0 // indirect
+	go.opentelemetry.io/otel/exporters/zipkin v1.22.0 // indirect
+	go.opentelemetry.io/otel/metric v1.22.0 // indirect
+	go.opentelemetry.io/otel/sdk v1.22.0 // indirect
+	go.opentelemetry.io/otel/trace v1.22.0 // indirect
 	go.opentelemetry.io/proto/otlp v1.0.0 // indirect
 	go.uber.org/atomic v1.10.0 // indirect
 	go.uber.org/automaxprocs v1.5.3 // indirect

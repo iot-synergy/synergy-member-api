@@ -71,7 +71,7 @@ func (l *QueryUserDeviceListLogic) QueryUserDeviceList(req *types.DeviceListQuer
 			Msg:  list.Message,
 		},
 		BaseListInfo: types.BaseListInfo{
-			Total: uint64(list.Code),
+			Total: uint64(list.Count),
 		},
 		Data: summaryList,
 	}, err

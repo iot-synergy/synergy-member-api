@@ -81,7 +81,8 @@ type ReplyListRespVo struct {
 }
 
 type ReplyListRespData struct {
-	List []ReplyRespVo `json:"replyList,repeated"`
+	List  []ReplyRespVo `json:"replyList,repeated"`
+	Total int           `json:"total,optional"`
 }
 
 // The basic response with data | ������������Ϣ

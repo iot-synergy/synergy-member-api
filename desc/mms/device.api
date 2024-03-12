@@ -53,7 +53,7 @@ type DeviceVipSetUpdateResp {
 }
 
 type DeviceListQueryReq {
-	AddxUserId   string `json:"addxUserId"`
+	UserId       string `json:"userId"`
 	SerialNumber string `json:"serialNumber,optional"`
 }
 

@@ -3,6 +3,7 @@ package device
 import (
 	"context"
 	"github.com/iot-synergy/synergy-addx-proxy/synergy_addx_proxy_client"
+	"github.com/iot-synergy/synergy-member-rpc/types/mms"
 
 	"github.com/iot-synergy/synergy-member-api/internal/svc"
 	"github.com/iot-synergy/synergy-member-api/internal/types"
@@ -26,8 +27,9 @@ func NewQueryUserDeviceListLogic(ctx context.Context, svcCtx *svc.ServiceContext
 
 func (l *QueryUserDeviceListLogic) QueryUserDeviceList(req *types.DeviceListQueryReq) (resp *types.DeviceListResp, err error) {
 	// todo: add your logic here and delete this line
+	member, err := l.svcCtx.MmsRpc.GetMemberById(l.ctx, &mms.UUIDReq{Id: req.UserId})
 	list, err := l.svcCtx.AddxProxy.QueryUserDeviceList(l.ctx, &synergy_addx_proxy_client.DeviceListQueryRequest{
-		AddxUserId:   req.AddxUserId,
+		AddxUserId:   "peckperk-" + member.GetForeinId(),
 		SerialNumber: &req.SerialNumber,
 	})
 	if err != nil {

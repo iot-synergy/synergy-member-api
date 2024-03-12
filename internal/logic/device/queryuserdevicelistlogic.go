@@ -27,10 +27,12 @@ func NewQueryUserDeviceListLogic(ctx context.Context, svcCtx *svc.ServiceContext
 
 func (l *QueryUserDeviceListLogic) QueryUserDeviceList(req *types.DeviceListQueryReq) (resp *types.DeviceListResp, err error) {
 	// todo: add your logic here and delete this line
+	if req.UserId == "" {
+		req.UserId = req.AddxUserId
+	}
 	member, err := l.svcCtx.MmsRpc.GetMemberById(l.ctx, &mms.UUIDReq{Id: req.UserId})
 	list, err := l.svcCtx.AddxProxy.QueryUserDeviceList(l.ctx, &synergy_addx_proxy_client.DeviceListQueryRequest{
-		AddxUserId:   "peckperk-" + member.GetForeinId(),
-		SerialNumber: &req.SerialNumber,
+		AddxUserId: "peckperk-" + member.GetForeinId(),
 	})
 	if err != nil {
 		return &types.DeviceListResp{

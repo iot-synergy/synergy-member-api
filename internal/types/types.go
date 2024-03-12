@@ -71,8 +71,8 @@ type DeviceVipSetUpdateResp struct {
 }
 
 type DeviceListQueryReq struct {
-	UserId   string `json:"userId"`
-	SerialNumber string `json:"serialNumber,optional"`
+	UserId     string `json:"userId,optional"`
+	AddxUserId string `json:"addxUserId,optional"`
 }
 
 type ReplyListRespVo struct {

@@ -2,6 +2,7 @@ package device
 
 import (
 	"context"
+
 	"github.com/iot-synergy/synergy-addx-proxy/synergy_addx_proxy_client"
 	"github.com/iot-synergy/synergy-member-rpc/types/mms"
 

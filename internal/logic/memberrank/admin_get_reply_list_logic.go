@@ -2,6 +2,7 @@ package memberrank
 
 import (
 	"context"
+
 	"github.com/iot-synergy/synergy-member-api/internal/svc"
 	"github.com/iot-synergy/synergy-member-api/internal/types"
 	"github.com/iot-synergy/synergy-member-rpc/types/mms"

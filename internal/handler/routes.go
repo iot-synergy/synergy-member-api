@@ -6,6 +6,7 @@ import (
 
 	base "github.com/iot-synergy/synergy-member-api/internal/handler/base"
 	captcha "github.com/iot-synergy/synergy-member-api/internal/handler/captcha"
+	device "github.com/iot-synergy/synergy-member-api/internal/handler/device"
 	member "github.com/iot-synergy/synergy-member-api/internal/handler/member"
 	memberrank "github.com/iot-synergy/synergy-member-api/internal/handler/memberrank"
 	oauthprovider "github.com/iot-synergy/synergy-member-api/internal/handler/oauthprovider"
@@ -13,7 +14,6 @@ import (
 	publicoauth "github.com/iot-synergy/synergy-member-api/internal/handler/publicoauth"
 	token "github.com/iot-synergy/synergy-member-api/internal/handler/token"
 	vipdemo "github.com/iot-synergy/synergy-member-api/internal/handler/vipdemo"
-	device "github.com/iot-synergy/synergy-member-api/internal/handler/device"
 	"github.com/iot-synergy/synergy-member-api/internal/svc"
 
 	"github.com/zeromicro/go-zero/rest"
@@ -58,35 +58,6 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 					Method:  http.MethodPost,
 					Path:    "/member",
 					Handler: member.GetMemberByIdHandler(serverCtx),
-				},
-			}...,
-		),
-		rest.WithJwt(serverCtx.Config.Auth.AccessSecret),
-	)
-
-	server.AddRoutes(
-		rest.WithMiddlewares(
-			[]rest.Middleware{serverCtx.Authority},
-			[]rest.Route{
-				{
-					Method:  http.MethodPost,
-					Path:    "/admin/CommentList",
-					Handler: memberrank.AdminGetCommentListHandler(serverCtx),
-				},
-				{
-					Method:  http.MethodPost,
-					Path:    "/admin/commentDetail",
-					Handler: memberrank.AdminGetCommentHandler(serverCtx),
-				},
-				{
-					Method:  http.MethodPost,
-					Path:    "/admin/replyComment",
-					Handler: memberrank.ReplyCommentHandler(serverCtx),
-				},
-				{
-					Method:  http.MethodPost,
-					Path:    "/admin/replyList",
-					Handler: memberrank.AdminGetReplyListHandler(serverCtx),
 				},
 			}...,
 		),
@@ -338,6 +309,35 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 					Method:  http.MethodPost,
 					Path:    "/device/queryUserDeviceList",
 					Handler: device.QueryUserDeviceListHandler(serverCtx),
+				},
+			}...,
+		),
+		rest.WithJwt(serverCtx.Config.Auth.AccessSecret),
+	)
+
+	server.AddRoutes(
+		rest.WithMiddlewares(
+			[]rest.Middleware{serverCtx.Authority},
+			[]rest.Route{
+				{
+					Method:  http.MethodPost,
+					Path:    "/admin/replyComment",
+					Handler: memberrank.ReplyCommentHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodPost,
+					Path:    "/admin/CommentList",
+					Handler: memberrank.AdminGetCommentListHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodPost,
+					Path:    "/admin/commentDetail",
+					Handler: memberrank.AdminGetCommentHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodPost,
+					Path:    "/admin/replyList",
+					Handler: memberrank.AdminGetReplyListHandler(serverCtx),
 				},
 			}...,
 		),

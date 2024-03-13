@@ -26,6 +26,27 @@ func NewQueryUserDeviceListLogic(ctx context.Context, svcCtx *svc.ServiceContext
 	}
 }
 
+func getInt64PointerValue(ptr *int64) int64 {
+	if ptr != nil {
+		return *ptr
+	}
+	return int64(0)
+}
+
+func getStringPointerValue(ptr *string) string {
+	if ptr != nil {
+		return *ptr
+	}
+	return ""
+}
+
+func getBoolPointerValue(ptr *bool) bool {
+	if ptr != nil {
+		return *ptr
+	}
+	return false
+}
+
 func (l *QueryUserDeviceListLogic) QueryUserDeviceList(req *types.DeviceListQueryReq) (resp *types.DeviceListResp, err error) {
 	// todo: add your logic here and delete this line
 	if req.UserId == "" {
@@ -50,6 +71,7 @@ func (l *QueryUserDeviceListLogic) QueryUserDeviceList(req *types.DeviceListQuer
 
 	var summaryList []types.DeviceSummary
 	for _, summary := range list.Data.List {
+
 		summaryList = append(summaryList, types.DeviceSummary{
 			AddxId:         summary.AddxUserId,
 			SerialNumber:   summary.SerialNumber,
@@ -57,16 +79,16 @@ func (l *QueryUserDeviceListLogic) QueryUserDeviceList(req *types.DeviceListQuer
 			ActivatedTime:  summary.ActivatedTime,
 			AdminName:      summary.AdminName,
 			DeviceName:     summary.DeviceName,
-			DeviceNetType:  *summary.DeviceNetType,
-			DeviceStatus:   *summary.DeviceStatus,
-			DeviceVipLevel: *summary.DeviceVipLevel,
-			FirmwareId:     *summary.FirmwareId,
-			FirmwareStatus: *summary.FirmwareStatus,
-			Icon:           *summary.Icon,
-			MacAddress:     *summary.MacAddress,
-			Online:         *summary.Online,
-			PersonDetect:   *summary.PersonDetect,
-			SupportBirdVip: *summary.SupportBirdVip,
+			DeviceNetType:  getInt64PointerValue(summary.DeviceNetType),
+			DeviceStatus:   getInt64PointerValue(summary.DeviceStatus),
+			DeviceVipLevel: getInt64PointerValue(summary.DeviceVipLevel),
+			FirmwareId:     getStringPointerValue(summary.FirmwareId),
+			FirmwareStatus: getInt64PointerValue(summary.FirmwareStatus),
+			Icon:           getStringPointerValue(summary.Icon),
+			MacAddress:     getStringPointerValue(summary.MacAddress),
+			Online:         getInt64PointerValue(summary.Online),
+			PersonDetect:   getInt64PointerValue(summary.PersonDetect),
+			SupportBirdVip: getBoolPointerValue(summary.SupportBirdVip),
 		})
 	}
 

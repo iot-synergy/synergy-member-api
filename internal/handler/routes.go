@@ -59,6 +59,11 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 					Path:    "/member",
 					Handler: member.GetMemberByIdHandler(serverCtx),
 				},
+				{
+					Method:  http.MethodPost,
+					Path:    "/member/sync_firebase_members",
+					Handler: member.SyncFirebaseMembersHandler(serverCtx),
+				},
 			}...,
 		),
 		rest.WithJwt(serverCtx.Config.Auth.AccessSecret),

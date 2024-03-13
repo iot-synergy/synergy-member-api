@@ -1,12 +1,12 @@
 import "../base.api"
 
 type (
-	replyReqVo {
+	ReplyReqVo {
 		CommentId int64  `json:"commentId,optional"`
 		Reply     string `json:"reply,optional"`
 		AdminName string `json:"adminName,optional"`
 	}
-	replyRespVo {
+	ReplyRespVo {
 		Id         int64  `json:"id,optional"`
 		CommentId  int64  `json:"commentId,optional"`
 		Reply      string `json:"reply,optional"`
@@ -15,52 +15,52 @@ type (
 		CreateTime int64  `json:"createTime,optional"`
 		UpdateTime int64  `json:"updateTime,optional"`
 	}
-	commentListReqVo {
+	CommentListReqVo {
 		IsReply     int32   `json:"isReply,optional"`
 		Title       string  `json:"title,optional"`
 		Content     string  `json:"content,optional"`
 		CommentTime []int64 `json:"commentTime,repeated,optional"`
 		PageInfo
 	}
-	commentListRespVo {
+	CommentListRespVo {
 		BaseMsgResp
-		Data commentListRespData `json:"data,optional"`
+		Data CommentListRespData `json:"data,optional"`
 	}
 
-	commentListRespData {
-		Data  []commentRespData `json:"data,repeated"`
+	CommentListRespData {
+		Data  []CommentRespData `json:"data,repeated"`
 		Total int               `json:"total,optional"`
 	}
 
-	commentIdReqVo {
+	CommentIdReqVo {
 		Id int64 `json:"id,optional"`
 	}
 
-	commentRespVo {
+	CommentRespVo {
 		BaseMsgResp
-		Data commentRespData `json:"data,optional"`
+		Data CommentRespData `json:"data,optional"`
 	}
 
-	commentRespData {
+	CommentRespData {
 		Id          int64         `json:"id,optional"`
 		Title       string        `json:"title,optional"`
 		Content     string        `json:"content,optional"`
 		MemberId    string        `json:"memberId,optional"`
 		Create_time int64         `json:"createTime,optional"`
 		Update_time int64         `json:"updateTime,optional"`
-		Reply       []replyRespVo `json:"reply,repeated"`
+		Reply       []ReplyRespVo `json:"reply,repeated"`
 		IsReply     bool          `json:"isReply,optional"`
 	}
-	replyListReqVo {
+	ReplyListReqVo {
 		Reply string `json:"reply,optional"`
 		PageInfo
 	}
-	replyListRespVo {
+	ReplyListRespVo {
 		BaseMsgResp
-		Data replyListRespData `json:"data,optional"`
+		Data ReplyListRespData `json:"data,optional"`
 	}
-	replyListRespData {
-		List  []replyRespVo `json:"replyList,repeated"`
+	ReplyListRespData {
+		List  []ReplyRespVo `json:"replyList,repeated"`
 		Total int           `json:"total,optional"`
 	}
 )
@@ -72,14 +72,14 @@ type (
 )
 service Mms {
 	@handler replyComment
-	post /admin/replyComment (replyReqVo) returns (BaseMsgResp)
+	post /admin/replyComment (ReplyReqVo) returns (BaseMsgResp)
 	
 	@handler adminGetCommentList
-	post /admin/CommentList (commentListReqVo) returns (commentListRespVo)
+	post /admin/CommentList (CommentListReqVo) returns (CommentListRespVo)
 	
 	@handler adminGetComment
-	post /admin/commentDetail (commentIdReqVo) returns (commentRespVo)
+	post /admin/commentDetail (CommentIdReqVo) returns (CommentRespVo)
 	
 	@handler adminGetReplyList
-	post /admin/replyList (replyListReqVo) returns (replyListRespVo)
+	post /admin/replyList (ReplyListReqVo) returns (ReplyListRespVo)
 }

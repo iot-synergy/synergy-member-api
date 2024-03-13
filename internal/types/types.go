@@ -359,6 +359,20 @@ type BindWechatReq struct {
 	Code string `json:"code"`
 }
 
+type SyncResult struct {
+	All     int64 `json:"all"`
+	New     int64 `json:"new"`
+	Updated int64 `json:"updated"`
+}
+
+// The sync response data | 用户同步返回数据
+// swagger:model SyncMemberResp
+type SyncMemberResp struct {
+	BaseDataInfo
+	//  The sync response data | 用户同步返回数据
+	Data SyncResult `json:"data"`
+}
+
 // The response data of member rank information | 会员等级信息
 // swagger:model MemberRankInfo
 type MemberRankInfo struct {

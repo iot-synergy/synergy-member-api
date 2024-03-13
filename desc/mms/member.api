@@ -220,6 +220,20 @@ type (
     BindWechatReq {
         Code string `json:"code"`
     }
+
+    SyncResult{
+        All int64 `json:"all"`
+        New int64 `json:"new"`
+        Updated int64 `json:"updated"`
+    }
+
+    // The sync response data | 用户同步返回数据
+    SyncMemberResp {
+        BaseDataInfo
+
+        //  The sync response data | 用户同步返回数据
+        Data SyncResult `json:"data"`
+    }
 )
 
 @server(
@@ -248,6 +262,11 @@ service Mms {
     // Get member by ID | 通过ID获取会员
     @handler getMemberById
     post /member (UUIDReq) returns (MemberInfoResp)
+
+    
+     // Sync firebase Member Data | 同步firebase上的用户数据
+    @handler syncFirebaseMembers
+    post /member/sync_firebase_members returns (BaseMsgResp)
 }
 
 @server(

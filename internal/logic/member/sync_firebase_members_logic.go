@@ -24,10 +24,10 @@ func NewSyncFirebaseMembersLogic(ctx context.Context, svcCtx *svc.ServiceContext
 }
 
 func (l *SyncFirebaseMembersLogic) SyncFirebaseMembers() (resp *types.BaseMsgResp, err error) {
-	data, err := l.svcCtx.MmsRpc.SyncFirebaseMember(l.ctx,
+	data, err := l.svcCtx.MmsRpc.SyncFirebaseMember(context.Background(),
 		&mms.Empty{})
 	if err != nil {
 		return nil, err
 	}
-	return &types.BaseMsgResp{Msg: l.svcCtx.Trans.Trans(l.ctx, data.Msg)}, nil
+	return &types.BaseMsgResp{Msg: l.svcCtx.Trans.Trans(context.Background(), data.Msg)}, nil
 }

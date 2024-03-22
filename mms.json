@@ -18,6 +18,30 @@
   "host": "localhost:9104",
   "basePath": "/",
   "paths": {
+    "/admin/CommentList": {
+      "post": {
+        "tags": [
+          "memberrank"
+        ],
+        "operationId": "AdminGetCommentList"
+      }
+    },
+    "/admin/commentDetail": {
+      "post": {
+        "tags": [
+          "memberrank"
+        ],
+        "operationId": "AdminGetComment"
+      }
+    },
+    "/admin/replyList": {
+      "post": {
+        "tags": [
+          "memberrank"
+        ],
+        "operationId": "AdminGetReplyList"
+      }
+    },
     "/captcha": {
       "get": {
         "description": "Get captcha | 获取验证码",
@@ -90,6 +114,22 @@
             }
           }
         }
+      }
+    },
+    "/device/queryUserDeviceList": {
+      "post": {
+        "tags": [
+          "device"
+        ],
+        "operationId": "QueryUserDeviceList"
+      }
+    },
+    "/device/updateDeviceVipSet": {
+      "post": {
+        "tags": [
+          "device"
+        ],
+        "operationId": "UpdateDeviceVipSet"
       }
     },
     "/init/database": {
@@ -510,6 +550,24 @@
             }
           }
         ],
+        "responses": {
+          "200": {
+            "description": "BaseMsgResp",
+            "schema": {
+              "$ref": "#/definitions/BaseMsgResp"
+            }
+          }
+        }
+      }
+    },
+    "/member/sync_firebase_members": {
+      "post": {
+        "description": "Sync firebase Member Data | 同步firebase上的用户数据",
+        "tags": [
+          "member"
+        ],
+        "summary": "Sync firebase Member Data | 同步firebase上的用户数据",
+        "operationId": "SyncFirebaseMembers",
         "responses": {
           "200": {
             "description": "BaseMsgResp",
@@ -1306,6 +1364,166 @@
           "type": "string",
           "x-go-name": "Data",
           "$ref": "#/definitions/CaptchaInfo"
+        },
+        "msg": {
+          "description": "Message | 提示信息",
+          "type": "string",
+          "x-go-name": "Msg"
+        }
+      },
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
+    },
+    "DeviceListQueryReq": {
+      "type": "object",
+      "properties": {
+        "addxUserId": {
+          "type": "string",
+          "x-go-name": "AddxUserId"
+        },
+        "userId": {
+          "type": "string",
+          "x-go-name": "UserId"
+        }
+      },
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
+    },
+    "DeviceListResp": {
+      "description": "The response data of device",
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "Error code | 错误代码",
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "Code"
+        },
+        "data": {
+          "description": "Data | 数据",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DeviceSummary"
+          },
+          "x-go-name": "Data"
+        },
+        "msg": {
+          "description": "Message | 提示信息",
+          "type": "string",
+          "x-go-name": "Msg"
+        },
+        "total": {
+          "description": "The total number of data | 数据总数",
+          "type": "integer",
+          "format": "uint64",
+          "x-go-name": "Total"
+        }
+      },
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
+    },
+    "DeviceSummary": {
+      "description": "The information of captcha | 验证码数据",
+      "type": "object",
+      "properties": {
+        "activated": {
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "Activated"
+        },
+        "activatedTime": {
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "ActivatedTime"
+        },
+        "addxId": {
+          "type": "string",
+          "x-go-name": "AddxId"
+        },
+        "adminName": {
+          "type": "string",
+          "x-go-name": "AdminName"
+        },
+        "deviceName": {
+          "type": "string",
+          "x-go-name": "DeviceName"
+        },
+        "deviceNetType": {
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "DeviceNetType"
+        },
+        "deviceStatus": {
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "DeviceStatus"
+        },
+        "deviceVipLevel": {
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "DeviceVipLevel"
+        },
+        "firmwareId": {
+          "type": "string",
+          "x-go-name": "FirmwareId"
+        },
+        "firmwareStatus": {
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "FirmwareStatus"
+        },
+        "icon": {
+          "type": "string",
+          "x-go-name": "Icon"
+        },
+        "macAddress": {
+          "type": "string",
+          "x-go-name": "MacAddress"
+        },
+        "online": {
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "Online"
+        },
+        "personDetect": {
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "PersonDetect"
+        },
+        "serialNumber": {
+          "type": "string",
+          "x-go-name": "SerialNumber"
+        },
+        "supportBirdVip": {
+          "type": "boolean",
+          "x-go-name": "SupportBirdVip"
+        }
+      },
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
+    },
+    "DeviceVipSetReq": {
+      "type": "object",
+      "properties": {
+        "productId": {
+          "type": "string",
+          "x-go-name": "ProductId"
+        },
+        "serialNumber": {
+          "type": "string",
+          "x-go-name": "SerialNumber"
+        }
+      },
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
+    },
+    "DeviceVipSetUpdateResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "Error code | 错误代码",
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "Code"
+        },
+        "data": {
+          "type": "string",
+          "x-go-name": "Data"
         },
         "msg": {
           "description": "Message | 提示信息",
@@ -2125,6 +2343,43 @@
       },
       "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
+    "QueryReq": {
+      "type": "object",
+      "required": [
+        "page",
+        "pageSize"
+      ],
+      "properties": {
+        "activatedTime": {
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "ActivatedTime"
+        },
+        "deviceVipLevel": {
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "DeviceVipLevel"
+        },
+        "owner": {
+          "type": "string",
+          "x-go-name": "Owner"
+        },
+        "page": {
+          "description": "Page number | 第几页",
+          "type": "integer",
+          "format": "uint64",
+          "x-go-name": "Page"
+        },
+        "pageSize": {
+          "description": "Page size | 单页数据行数",
+          "type": "integer",
+          "format": "uint64",
+          "maximum": 100000,
+          "x-go-name": "PageSize"
+        }
+      },
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
+    },
     "RedirectInfo": {
       "description": "Redirect information | 跳转网址",
       "type": "object",
@@ -2332,6 +2587,51 @@
           "description": "The phone number | 电话号码",
           "type": "string",
           "x-go-name": "PhoneNumber"
+        }
+      },
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
+    },
+    "SyncMemberResp": {
+      "description": "The sync response data | 用户同步返回数据",
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "Error code | 错误代码",
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "Code"
+        },
+        "data": {
+          "description": "Data | 数据",
+          "type": "string",
+          "x-go-name": "Data",
+          "$ref": "#/definitions/SyncResult"
+        },
+        "msg": {
+          "description": "Message | 提示信息",
+          "type": "string",
+          "x-go-name": "Msg"
+        }
+      },
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
+    },
+    "SyncResult": {
+      "type": "object",
+      "properties": {
+        "all": {
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "All"
+        },
+        "new": {
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "New"
+        },
+        "updated": {
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "Updated"
         }
       },
       "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"

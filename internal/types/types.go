@@ -745,6 +745,10 @@ type CommentRespData struct {
 	Update_time int64         `json:"updateTime,optional"`
 	Reply       []ReplyRespVo `json:"reply,repeated"`
 	IsReply     bool          `json:"isReply,optional"`
+	NickName    string        `json:"nickName,optional"`
+	UserName    string        `json:"userName,optional"`
+	Email       string        `json:"email,optional"`
+	Avatar      string        `json:"avatar,optional"`
 }
 
 type ReplyListReqVo struct {

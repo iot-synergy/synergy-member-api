@@ -70,6 +70,10 @@ func (l *AdminGetCommentListLogic) AdminGetCommentList(req *types.CommentListReq
 			Update_time: info.GetUpdateTime(),
 			IsReply:     info.GetIsReply(),
 			Reply:       respVos,
+			UserName:    "",
+			NickName:    "",
+			Email:       "",
+			Avatar:      "",
 		})
 	}
 

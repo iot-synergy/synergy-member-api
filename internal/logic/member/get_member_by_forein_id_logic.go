@@ -24,7 +24,6 @@ func NewGetMemberByForeinIdLogic(ctx context.Context, svcCtx *svc.ServiceContext
 }
 
 func (l *GetMemberByForeinIdLogic) GetMemberByForeinId(req *types.IDStringReq) (resp *types.MemberInfoResp, err error) {
-	// todo: add your logic here and delete this line
 	data, err := l.svcCtx.MmsRpc.GetMemberByForeinId2(l.ctx, &mms.UUIDReq{Id: req.Id})
 	if err != nil {
 		return nil, err

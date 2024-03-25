@@ -235,7 +235,7 @@ type (
         Data SyncResult `json:"data"`
     }
 
-    IdReq {
+    IDStringReq {
         Id string `json:"id"`
     }
 )
@@ -273,7 +273,7 @@ service Mms {
     post /member/sync_firebase_members returns (BaseMsgResp)
 
     @handler getMemberByForeinId
-    post /member/getMemberByForeinId(IdReq) returns (MemberInfoResp)
+    post /member/getMemberByForeinId(IDStringReq) returns (MemberInfoResp)
 }
 
 @server(

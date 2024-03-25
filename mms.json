@@ -1584,6 +1584,16 @@
       },
       "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
+    "IDStringReq": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "x-go-name": "Id"
+        }
+      },
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
+    },
     "IDsReq": {
       "description": "Basic IDs request | 基础ID数组参数请求",
       "type": "object",

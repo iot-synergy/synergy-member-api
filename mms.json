@@ -262,6 +262,14 @@
         }
       }
     },
+    "/member/getMemberByForeinId": {
+      "post": {
+        "tags": [
+          "member"
+        ],
+        "operationId": "GetMemberByForeinId"
+      }
+    },
     "/member/list": {
       "post": {
         "description": "Get member list | 获取会员列表",

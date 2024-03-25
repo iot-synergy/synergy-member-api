@@ -267,6 +267,9 @@ service Mms {
      // Sync firebase Member Data | 同步firebase上的用户数据
     @handler syncFirebaseMembers
     post /member/sync_firebase_members returns (BaseMsgResp)
+
+    @handler getMemberByForeinId
+    post /member/getMemberByForeinId(UUIDReq) returns (MemberInfoResp)
 }
 
 @server(

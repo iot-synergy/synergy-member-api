@@ -50,6 +50,11 @@ type (
 		Update_time int64         `json:"updateTime,optional"`
 		Reply       []ReplyRespVo `json:"reply,repeated"`
 		IsReply     bool          `json:"isReply,optional"`
+		nickName    string  	  `json:"nickName,optional"`
+		userName    string        `json:"userName,optional"`
+		email       string        `json:"email,optional"`
+		avatar 		string        `json:"avatar,optional"`
+
 	}
 	ReplyListReqVo {
 		Reply string `json:"reply,optional"`

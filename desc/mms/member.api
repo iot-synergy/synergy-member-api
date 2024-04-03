@@ -234,6 +234,10 @@ type (
         //  The sync response data | 用户同步返回数据
         Data SyncResult `json:"data"`
     }
+
+    IDStringReq {
+        Id string `json:"id"`
+    }
 )
 
 @server(
@@ -267,6 +271,9 @@ service Mms {
      // Sync firebase Member Data | 同步firebase上的用户数据
     @handler syncFirebaseMembers
     post /member/sync_firebase_members returns (BaseMsgResp)
+
+    @handler getMemberByForeinId
+    post /member/getMemberByForeinId(IDStringReq) returns (MemberInfoResp)
 }
 
 @server(

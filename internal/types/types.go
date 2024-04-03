@@ -373,6 +373,11 @@ type SyncMemberResp struct {
 	Data SyncResult `json:"data"`
 }
 
+// swagger:model IDStringReq
+type IDStringReq struct {
+	Id string `json:"id"`
+}
+
 // The response data of member rank information | 会员等级信息
 // swagger:model MemberRankInfo
 type MemberRankInfo struct {
@@ -745,6 +750,10 @@ type CommentRespData struct {
 	Update_time int64         `json:"updateTime,optional"`
 	Reply       []ReplyRespVo `json:"reply,repeated"`
 	IsReply     bool          `json:"isReply,optional"`
+	NickName    string        `json:"nickName,optional"`
+	UserName    string        `json:"userName,optional"`
+	Email       string        `json:"email,optional"`
+	Avatar      string        `json:"avatar,optional"`
 }
 
 type ReplyListReqVo struct {

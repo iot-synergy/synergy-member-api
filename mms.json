@@ -1784,6 +1784,10 @@
           "type": "string",
           "x-go-name": "Email"
         },
+        "foreinId": {
+          "type": "string",
+          "x-go-name": "ForeinId"
+        },
         "id": {
           "description": "ID",
           "type": "string",

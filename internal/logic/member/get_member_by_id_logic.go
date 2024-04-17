@@ -51,6 +51,7 @@ func (l *GetMemberByIdLogic) GetMemberById(req *types.UUIDReq) (resp *types.Memb
 			Mobile:   data.Mobile,
 			Email:    data.Email,
 			Avatar:   data.Avatar,
+			ForeinId: data.ForeinId,
 		},
 	}, nil
 }

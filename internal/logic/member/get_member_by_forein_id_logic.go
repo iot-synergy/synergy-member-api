@@ -46,6 +46,7 @@ func (l *GetMemberByForeinIdLogic) GetMemberByForeinId(req *types.IDStringReq) (
 			Mobile:   data.Data.MemberInfo.Mobile,
 			Email:    data.Data.MemberInfo.Email,
 			Avatar:   data.Data.MemberInfo.Avatar,
+			ForeinId: data.Data.MemberInfo.ForeinId,
 		},
 	}, nil
 }

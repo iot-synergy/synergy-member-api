@@ -38,6 +38,7 @@ func (l *RegisterLogic) Register(req *types.RegisterReq) (resp *types.BaseMsgRes
 	if ok := l.svcCtx.Captcha.Verify(config.RedisCaptchaPrefix+req.CaptchaId, req.Captcha, true); ok {
 		_, err := l.svcCtx.MmsRpc.CreateMember(l.ctx,
 			&mms.MemberInfo{
+				ForeinId: &req.Email,
 				Username: &req.Username,
 				Password: &req.Password,
 				Email:    &req.Email,

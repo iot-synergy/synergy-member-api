@@ -42,6 +42,7 @@ func (l *RegisterByEmailLogic) RegisterByEmail(req *types.RegisterByEmailReq) (r
 	if captchaData == req.Captcha {
 		_, err := l.svcCtx.MmsRpc.CreateMember(l.ctx,
 			&mms.MemberInfo{
+				ForeinId: &req.Email,
 				Username: &req.Username,
 				Password: &req.Password,
 				Email:    &req.Email,

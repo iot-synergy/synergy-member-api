@@ -43,6 +43,7 @@ func (l *RegisterBySmsLogic) RegisterBySms(req *types.RegisterBySmsReq) (resp *t
 	if captchaData == req.Captcha {
 		_, err := l.svcCtx.MmsRpc.CreateMember(l.ctx,
 			&mms.MemberInfo{
+				ForeinId: &req.PhoneNumber,
 				Username: &req.Username,
 				Password: &req.Password,
 				Mobile:   &req.PhoneNumber,

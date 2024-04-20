@@ -131,7 +131,8 @@ type MemberInfo struct {
 	// Email | 邮箱
 	Email *string `json:"email,optional"`
 	// Avatar | 头像地址
-	Avatar *string `json:"avatar,optional"`
+	Avatar   *string `json:"avatar,optional"`
+	ForeinId *string `json:"foreinId,optional"`
 }
 
 // The response data of member list | 会员列表数据

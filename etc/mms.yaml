@@ -4,8 +4,13 @@ Port: 9104
 Timeout: 30000
 
 Auth:
-  AccessSecret:  jS6VKDtsJf3z1n2VKDtsJf3z1n3 # the same as core
+  AccessSecret: "12345678" # the same as core
   AccessExpire: 259200
+
+Etcd:
+  Hosts:
+    - 127.0.0.1:2379
+  Key: mms.api
 
 CROSConf:
   Address: '*'
@@ -27,11 +32,11 @@ Prometheus:
 # The database config of casbin
 DatabaseConf:
   Type: mysql
-  Host: 192.168.10.181
+  Host: 127.0.0.1
   Port: 3306
-  DBName: peckperk
+  DBName: database240219
   Username: root # set your username
-  Password: "123456" # set your password
+  Password: "xiaocaihong" # set your password
   MaxOpenConn: 100
   SSLMode: disable
   CacheTime: 5
@@ -70,13 +75,13 @@ RedisConf:
 MmsRpc:
   # Target: k8s://default/mms-rpc-svc:9103
   Endpoints: 
-    - 192.168.10.181:9103
+    - 127.0.0.1:9103
   Enabled: true
 
 CoreRpc:
-  Endpoints: 
+  Endpoints:
     - 192.168.10.181:9101
-  Enabled: true
+  Enabled: false
 
 McmsRpc:
   # Target: k8s://default/mcms-rpc-svc:9106
@@ -84,3 +89,8 @@ McmsRpc:
     - 192.168.10.181:9106
   Enabled: false
   Timeout: 5000
+
+AddxProxyRpc:
+  Endpoints:
+    - 127.0.0.1:9112
+  Enabled: false

@@ -59,6 +59,7 @@ func (l *GetMemberListLogic) GetMemberList(req *types.MemberListReq) (resp *type
 				Mobile:   v.Mobile,
 				Email:    v.Email,
 				Avatar:   v.Avatar,
+				ForeinId: v.ForeinId,
 			})
 	}
 	return resp, nil

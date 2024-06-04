@@ -57,6 +57,43 @@ type DeviceListQueryReq {
 	AddxUserId string `json:"addxUserId,optional"`
 }
 
+type VipActiveCodeGenReq {
+	ActivationDurationDay int64  `json:"activationDurationDay"`
+	From int64 `json:"from"`
+}
+
+type VipActiveCode {
+	Id string `json:"id"`
+	ActivationCode string `json:"activationCode"`
+	State int64  `json:"state"`
+	From string  `json:"from"`
+	Email *string `json:"email,optional"`
+	SerialNumber *string `json:"serialNumber,optional"`
+	OrderId *string `json:"orderId,optional"`
+	DurationDay int64  `json:"durationDay,optional"`
+	ActivationTime *int64  `json:"activationTime,optional"`
+	CreateAt int64  `json:"createAt"`
+	UpdateAt int64  `json:"updateAt"`
+}
+
+type VipActiveCodeResp {
+	BaseMsgResp
+	Data VipActiveCode `json:"data,optional"`
+}
+
+type VipActiveCodeQueryReq {
+	PageInfo
+	State *int64  `json:"state,optional"`
+	From *string  `json:"from,optional"`
+	SerialNumber *string `json:"serialNumber,optional"`
+}
+
+type VipActiveCodeListResp {
+	BaseDataInfo
+	BaseListInfo
+	Data []VipActiveCode `json:"data"`
+}
+
 @server (
 	group:      device
 	jwt:        Auth
@@ -70,4 +107,13 @@ service Mms {
 	post /device/updateDeviceVipSet (DeviceVipSetReq) returns (DeviceVipSetUpdateResp)
 	@handler queryUserDeviceList
 	post /device/queryUserDeviceList (DeviceListQueryReq) returns (DeviceListResp)
+
+	@handler genVipActiveCode
+	post /device/genVipActiveCode (VipActiveCodeGenReq) returns (VipActiveCodeResp)
+
+	@handler updateVipActiveCode
+	post /device/updateVipActiveCode (VipActiveCode) returns (VipActiveCodeResp)
+
+	@handler queryVipActiveCodeList
+	post /device/queryVipActiveCodeList (VipActiveCodeQueryReq) returns (VipActiveCodeListResp)
 }

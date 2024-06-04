@@ -52,11 +52,29 @@ func (l *QueryUserDeviceListLogic) QueryUserDeviceList(req *types.DeviceListQuer
 	if req.UserId == "" {
 		req.UserId = req.AddxUserId
 	}
+
 	member, err := l.svcCtx.MmsRpc.GetMemberById(l.ctx, &mms.UUIDReq{Id: req.UserId})
+
+	if err != nil {
+		l.Logger.Errorw("MmsRpc.GetMemberById error", logx.LogField{Key: "error", Value: err.Error()}, logx.LogField{Key: "req", Value: req})
+		return &types.DeviceListResp{
+			BaseDataInfo: types.BaseDataInfo{
+				Code: -1,
+				Msg:  err.Error(),
+			},
+			BaseListInfo: types.BaseListInfo{
+				Total: 0,
+			},
+			Data: nil,
+		}, err
+	}
+
 	list, err := l.svcCtx.AddxProxy.QueryUserDeviceList(l.ctx, &synergy_addx_proxy_client.DeviceListQueryRequest{
 		AddxUserId: "peckperk-" + member.GetForeinId(),
 	})
+
 	if err != nil {
+		l.Logger.Errorw("AddxProxy.QueryUserDeviceList error", logx.LogField{Key: "error", Value: err.Error()}, logx.LogField{Key: "req", Value: req})
 		return &types.DeviceListResp{
 			BaseDataInfo: types.BaseDataInfo{
 				Code: -1,

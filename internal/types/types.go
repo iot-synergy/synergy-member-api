@@ -699,6 +699,47 @@ type DeviceListQueryReq struct {
 	AddxUserId string `json:"addxUserId,optional"`
 }
 
+// swagger:model VipActiveCodeGenReq
+type VipActiveCodeGenReq struct {
+	ActivationDurationDay int64 `json:"activationDurationDay"`
+	From                  int64 `json:"from"`
+}
+
+type VipActiveCode struct {
+	Id             string  `json:"id"`
+	ActivationCode string  `json:"activationCode"`
+	State          int64   `json:"state"`
+	From           string  `json:"from"`
+	Email          *string `json:"email,optional"`
+	SerialNumber   *string `json:"serialNumber,optional"`
+	OrderId        *string `json:"orderId,optional"`
+	DurationDay    int64   `json:"durationDay,optional"`
+	ActivationTime *int64  `json:"activationTime,optional"`
+	CreateAt       int64   `json:"createAt"`
+	UpdateAt       int64   `json:"updateAt"`
+}
+
+// swagger:model VipActiveCodeResp
+type VipActiveCodeResp struct {
+	BaseMsgResp
+	Data VipActiveCode `json:"data,optional"`
+}
+
+// swagger:model VipActiveCodeQueryReq
+type VipActiveCodeQueryReq struct {
+	PageInfo
+	State        *int64  `json:"state,optional"`
+	From         *string `json:"from,optional"`
+	SerialNumber *string `json:"serialNumber,optional"`
+}
+
+// swagger:model VipActiveCodeListResp
+type VipActiveCodeListResp struct {
+	BaseDataInfo
+	BaseListInfo
+	Data []VipActiveCode `json:"data"`
+}
+
 type ReplyReqVo struct {
 	CommentId int64  `json:"commentId,optional"`
 	Reply     string `json:"reply,optional"`

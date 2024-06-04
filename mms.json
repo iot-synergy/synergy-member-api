@@ -116,6 +116,14 @@
         }
       }
     },
+    "/device/genVipActiveCode": {
+      "post": {
+        "tags": [
+          "device"
+        ],
+        "operationId": "GenVipActiveCode"
+      }
+    },
     "/device/queryUserDeviceList": {
       "post": {
         "tags": [
@@ -124,12 +132,28 @@
         "operationId": "QueryUserDeviceList"
       }
     },
+    "/device/queryVipActiveCodeList": {
+      "post": {
+        "tags": [
+          "device"
+        ],
+        "operationId": "QueryVipActiveCodeList"
+      }
+    },
     "/device/updateDeviceVipSet": {
       "post": {
         "tags": [
           "device"
         ],
         "operationId": "UpdateDeviceVipSet"
+      }
+    },
+    "/device/updateVipActiveCode": {
+      "post": {
+        "tags": [
+          "device"
+        ],
+        "operationId": "UpdateVipActiveCode"
       }
     },
     "/init/database": {
@@ -2857,6 +2881,164 @@
             "type": "string"
           },
           "x-go-name": "Ids"
+        }
+      },
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
+    },
+    "VipActiveCode": {
+      "type": "object",
+      "properties": {
+        "activationCode": {
+          "type": "string",
+          "x-go-name": "ActivationCode"
+        },
+        "activationTime": {
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "ActivationTime"
+        },
+        "createAt": {
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "CreateAt"
+        },
+        "durationDay": {
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "DurationDay"
+        },
+        "email": {
+          "type": "string",
+          "x-go-name": "Email"
+        },
+        "from": {
+          "type": "string",
+          "x-go-name": "From"
+        },
+        "id": {
+          "type": "string",
+          "x-go-name": "Id"
+        },
+        "orderId": {
+          "type": "string",
+          "x-go-name": "OrderId"
+        },
+        "serialNumber": {
+          "type": "string",
+          "x-go-name": "SerialNumber"
+        },
+        "state": {
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "State"
+        },
+        "updateAt": {
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "UpdateAt"
+        }
+      },
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
+    },
+    "VipActiveCodeGenReq": {
+      "type": "object",
+      "properties": {
+        "activationDurationDay": {
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "ActivationDurationDay"
+        },
+        "from": {
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "From"
+        }
+      },
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
+    },
+    "VipActiveCodeListResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "Error code | 错误代码",
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "Code"
+        },
+        "data": {
+          "description": "Data | 数据",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/VipActiveCode"
+          },
+          "x-go-name": "Data"
+        },
+        "msg": {
+          "description": "Message | 提示信息",
+          "type": "string",
+          "x-go-name": "Msg"
+        },
+        "total": {
+          "description": "The total number of data | 数据总数",
+          "type": "integer",
+          "format": "uint64",
+          "x-go-name": "Total"
+        }
+      },
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
+    },
+    "VipActiveCodeQueryReq": {
+      "type": "object",
+      "required": [
+        "page",
+        "pageSize"
+      ],
+      "properties": {
+        "from": {
+          "type": "string",
+          "x-go-name": "From"
+        },
+        "page": {
+          "description": "Page number | 第几页",
+          "type": "integer",
+          "format": "uint64",
+          "x-go-name": "Page"
+        },
+        "pageSize": {
+          "description": "Page size | 单页数据行数",
+          "type": "integer",
+          "format": "uint64",
+          "maximum": 100000,
+          "x-go-name": "PageSize"
+        },
+        "serialNumber": {
+          "type": "string",
+          "x-go-name": "SerialNumber"
+        },
+        "state": {
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "State"
+        }
+      },
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
+    },
+    "VipActiveCodeResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "Error code | 错误代码",
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "Code"
+        },
+        "data": {
+          "$ref": "#/definitions/VipActiveCode"
+        },
+        "msg": {
+          "description": "Message | 提示信息",
+          "type": "string",
+          "x-go-name": "Msg"
         }
       },
       "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"

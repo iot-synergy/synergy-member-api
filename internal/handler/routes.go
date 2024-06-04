@@ -320,6 +320,21 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 					Path:    "/device/queryUserDeviceList",
 					Handler: device.QueryUserDeviceListHandler(serverCtx),
 				},
+				{
+					Method:  http.MethodPost,
+					Path:    "/device/genVipActiveCode",
+					Handler: device.GenVipActiveCodeHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodPost,
+					Path:    "/device/updateVipActiveCode",
+					Handler: device.UpdateVipActiveCodeHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodPost,
+					Path:    "/device/queryVipActiveCodeList",
+					Handler: device.QueryVipActiveCodeListHandler(serverCtx),
+				},
 			}...,
 		),
 		rest.WithJwt(serverCtx.Config.Auth.AccessSecret),

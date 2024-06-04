@@ -8,7 +8,7 @@ require (
 	github.com/casbin/casbin/v2 v2.81.0
 	github.com/duke-git/lancet/v2 v2.2.8
 	github.com/iot-synergy/oms-core v1.3.3
-	github.com/iot-synergy/synergy-addx-proxy v0.1.3
+	github.com/iot-synergy/synergy-addx-proxy v0.1.5
 	github.com/iot-synergy/synergy-common v1.3.3
 	github.com/iot-synergy/synergy-member-rpc v1.3.12
 	github.com/iot-synergy/synergy-message-center v1.3.3

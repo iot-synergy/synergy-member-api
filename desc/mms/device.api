@@ -72,8 +72,8 @@ type VipActiveCode {
 	OrderId *string `json:"orderId,optional"`
 	DurationDay int64  `json:"durationDay,optional"`
 	ActivationTime *int64  `json:"activationTime,optional"`
-	CreateAt int64  `json:"createAt"`
-	UpdateAt int64  `json:"updateAt"`
+	CreateAt int64  `json:"createAt,optional"`
+	UpdateAt int64  `json:"updateAt,optional"`
 }
 
 type VipActiveCodeResp {

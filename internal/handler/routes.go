@@ -77,6 +77,11 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 	server.AddRoutes(
 		[]rest.Route{
 			{
+				Method:  http.MethodGet,
+				Path:    "/member/profile",
+				Handler: member.GetProfileHandler(serverCtx),
+			},
+			{
 				Method:  http.MethodPost,
 				Path:    "/member/profile",
 				Handler: member.ModifyProfileHandler(serverCtx),

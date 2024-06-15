@@ -425,6 +425,22 @@
       }
     },
     "/member/profile": {
+      "get": {
+        "description": "get users' own profile | 用户修改信息接口",
+        "tags": [
+          "member"
+        ],
+        "summary": "get users' own profile | 用户修改信息接口",
+        "operationId": "GetProfile",
+        "responses": {
+          "200": {
+            "description": "LoginResp",
+            "schema": {
+              "$ref": "#/definitions/LoginResp"
+            }
+          }
+        }
+      },
       "post": {
         "description": "Modify users' own profile | 用户修改信息接口",
         "tags": [

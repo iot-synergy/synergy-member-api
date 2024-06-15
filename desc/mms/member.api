@@ -174,7 +174,7 @@ type (
         RankId       string          `json:"rankId"`
 
         // Token for authorization | 验证身份的token
-        Token        string          `json:"token"`
+        Token        string          `json:"token,optional"`
 
         // Expire timestamp | 过期时间戳
         Expire       uint64          `json:"expire"`
@@ -284,6 +284,9 @@ service Mms {
 )
 
 service Mms {
+    // get users' own profile | 用户修改信息接口
+    @handler getProfile
+    get /member/profile returns (LoginResp)
     // Modify users' own profile | 用户修改信息接口
     @handler modifyProfile
     post /member/profile (ModifyProfileReq) returns (BaseMsgResp)

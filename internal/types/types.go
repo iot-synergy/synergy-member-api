@@ -313,7 +313,7 @@ type LoginInfo struct {
 	// Rank Code | 等级码
 	RankId string `json:"rankId"`
 	// Token for authorization | 验证身份的token
-	Token string `json:"token"`
+	Token string `json:"token,optional"`
 	// Expire timestamp | 过期时间戳
 	Expire uint64 `json:"expire"`
 	// Avatar | 用户头像
@@ -715,8 +715,8 @@ type VipActiveCode struct {
 	OrderId        *string `json:"orderId,optional"`
 	DurationDay    int64   `json:"durationDay,optional"`
 	ActivationTime *int64  `json:"activationTime,optional"`
-	CreateAt       int64   `json:"createAt"`
-	UpdateAt       int64   `json:"updateAt"`
+	CreateAt       int64   `json:"createAt,optional"`
+	UpdateAt       int64   `json:"updateAt,optional"`
 }
 
 // swagger:model VipActiveCodeResp

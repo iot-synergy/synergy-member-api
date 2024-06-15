@@ -27,8 +27,8 @@ func (l *UpdateVipActiveCodeLogic) UpdateVipActiveCode(req *types.VipActiveCode)
 	rpcReq := &synergyAddxProxy.ActivationCodeInfo{
 		Id:                    req.Id,
 		ActivationCode:        req.ActivationCode,
-		CreatedAt:             req.CreateAt,
-		UpdatedAt:             req.UpdateAt,
+		CreatedAt:             0,
+		UpdatedAt:             0,
 		State:                 req.State,
 		From:                  req.From,
 		Sn:                    req.SerialNumber,

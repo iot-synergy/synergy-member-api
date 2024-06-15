@@ -66,11 +66,11 @@ func (l *GetProfileLogic) GetProfile() (resp *types.LoginResp, err error) {
 		BaseDataInfo: types.BaseDataInfo{Msg: l.svcCtx.Trans.Trans(l.ctx, "login.loginSuccessTitle")},
 		Data: types.LoginInfo{
 			UserId:   *result.Id,
-			RankId:   *result.RankCode,
-			Nickname: *result.Nickname,
-			RankName: l.svcCtx.Trans.Trans(l.ctx, MemberRankData[*result.RankId]),
-			Avatar:   *result.Avatar,
-			Expire:   uint64(*result.ExpiredAt),
+			RankId:   result.GetRankCode(),
+			Nickname: result.GetNickname(),
+			RankName: l.svcCtx.Trans.Trans(l.ctx, MemberRankData[result.GetRankId()]),
+			Avatar:   result.GetAvatar(),
+			Expire:   uint64(result.GetExpiredAt()),
 		},
 	}
 	return resp, nil

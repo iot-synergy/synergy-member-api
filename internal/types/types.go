@@ -665,12 +665,17 @@ type DeviceSummary struct {
 	SupportBirdVip bool   `bson:"supportBirdVip,optional" json:"supportBirdVip,optional"`
 }
 
+// swagger:model DeviceListInfo
+type DeviceListInfo struct {
+	BaseListInfo
+	Data []DeviceSummary `json:"data,optional"`
+}
+
 // The response data of device
 // swagger:model DeviceListResp
 type DeviceListResp struct {
 	BaseDataInfo
-	BaseListInfo
-	Data []DeviceSummary `json:"data"`
+	Data DeviceListInfo `json:"data,optional"`
 }
 
 // swagger:model QueryReq

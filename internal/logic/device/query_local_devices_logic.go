@@ -39,12 +39,18 @@ func (l *QueryLocalDevicesLogic) QueryLocalDevices(req *types.QueryReq) (resp *t
 		return nil, er
 	}
 
-	resp = &types.DeviceListResp{}
+	resp = &types.DeviceListResp{
+		BaseDataInfo: types.BaseDataInfo{
+			Code: 0,
+			Msg:  l.svcCtx.Trans.Trans(l.ctx, i18n.Success),
+		},
+		Data: types.DeviceListInfo{},
+	}
 	resp.Msg = l.svcCtx.Trans.Trans(l.ctx, i18n.Success)
-	resp.Total = uint64(re.Count)
+	resp.Data.Total = uint64(re.Count)
 
 	for _, v := range re.Data.List {
-		resp.Data = append(resp.Data,
+		resp.Data.Data = append(resp.Data.Data,
 			types.DeviceSummary{
 				AddxId:         v.AddxUserId,
 				SerialNumber:   v.SerialNumber,

@@ -28,11 +28,14 @@ type DeviceSummary {
 	SupportBirdVip bool   `bson:"supportBirdVip,optional" json:"supportBirdVip,optional"`
 }
 
+type DeviceListInfo {
+	BaseListInfo
+	Data []DeviceSummary `json:"data,optional"`
+}
 // The response data of device
 type DeviceListResp {
 	BaseDataInfo
-	BaseListInfo
-	Data []DeviceSummary `json:"data"`
+	Data DeviceListInfo `json:"data,optional"`	
 }
 
 type QueryReq {

@@ -1421,6 +1421,26 @@
       },
       "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
     },
+    "DeviceListInfo": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "description": "Data | 数据",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DeviceSummary"
+          },
+          "x-go-name": "Data"
+        },
+        "total": {
+          "description": "The total number of data | 数据总数",
+          "type": "integer",
+          "format": "uint64",
+          "x-go-name": "Total"
+        }
+      },
+      "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"
+    },
     "DeviceListQueryReq": {
       "type": "object",
       "properties": {
@@ -1447,22 +1467,14 @@
         },
         "data": {
           "description": "Data | 数据",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/DeviceSummary"
-          },
-          "x-go-name": "Data"
+          "type": "string",
+          "x-go-name": "Data",
+          "$ref": "#/definitions/DeviceListInfo"
         },
         "msg": {
           "description": "Message | 提示信息",
           "type": "string",
           "x-go-name": "Msg"
-        },
-        "total": {
-          "description": "The total number of data | 数据总数",
-          "type": "integer",
-          "format": "uint64",
-          "x-go-name": "Total"
         }
       },
       "x-go-package": "github.com/iot-synergy/synergy-member-api/internal/types"

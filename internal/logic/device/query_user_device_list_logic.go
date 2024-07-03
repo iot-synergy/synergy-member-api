@@ -58,14 +58,8 @@ func (l *QueryUserDeviceListLogic) QueryUserDeviceList(req *types.DeviceListQuer
 	if err != nil {
 		l.Logger.Errorw("MmsRpc.GetMemberById error", logx.LogField{Key: "error", Value: err.Error()}, logx.LogField{Key: "req", Value: req})
 		return &types.DeviceListResp{
-			BaseDataInfo: types.BaseDataInfo{
-				Code: -1,
-				Msg:  err.Error(),
-			},
-			BaseListInfo: types.BaseListInfo{
-				Total: 0,
-			},
-			Data: nil,
+			BaseDataInfo: types.BaseDataInfo{Code: -1, Msg: err.Error()},
+			Data:         types.DeviceListInfo{},
 		}, err
 	}
 
@@ -80,10 +74,13 @@ func (l *QueryUserDeviceListLogic) QueryUserDeviceList(req *types.DeviceListQuer
 				Code: -1,
 				Msg:  err.Error(),
 			},
-			BaseListInfo: types.BaseListInfo{
-				Total: 0,
+
+			Data: types.DeviceListInfo{
+				BaseListInfo: types.BaseListInfo{
+					Total: 0,
+				},
+				Data: []types.DeviceSummary{},
 			},
-			Data: nil,
 		}, err
 	}
 
@@ -111,13 +108,13 @@ func (l *QueryUserDeviceListLogic) QueryUserDeviceList(req *types.DeviceListQuer
 	}
 
 	return &types.DeviceListResp{
-		BaseDataInfo: types.BaseDataInfo{
-			Code: int(list.Code),
-			Msg:  list.Message,
+		BaseDataInfo: types.BaseDataInfo{Code: int(list.Code), Msg: list.Message},
+		Data: types.DeviceListInfo{
+			BaseListInfo: types.BaseListInfo{
+				Total: uint64(list.Count),
+			},
+
+			Data: summaryList,
 		},
-		BaseListInfo: types.BaseListInfo{
-			Total: uint64(list.Count),
-		},
-		Data: summaryList,
 	}, err
 }

@@ -42,10 +42,10 @@ func (l *QueryVipActiveCodeListLogic) QueryVipActiveCodeList(req *types.VipActiv
 
 	resp = &types.VipActiveCodeListResp{}
 	resp.Msg = l.svcCtx.Trans.Trans(l.ctx, i18n.Success)
-	resp.Total = uint64(dataList.Data.Count)
+	resp.Data.Total = uint64(dataList.Data.Count)
 
 	for _, v := range dataList.Data.List {
-		resp.Data = append(resp.Data,
+		resp.Data.Data = append(resp.Data.Data,
 			types.VipActiveCode{
 				Id:             v.Id,
 				ActivationCode: v.ActivationCode,

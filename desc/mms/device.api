@@ -91,11 +91,17 @@ type VipActiveCodeQueryReq {
 	SerialNumber *string `json:"serialNumber,optional"`
 }
 
-type VipActiveCodeListResp {
-	BaseDataInfo
+type VipActiveCodeListInfo {
 	BaseListInfo
 	Data []VipActiveCode `json:"data"`
 }
+
+type VipActiveCodeListResp {
+	BaseDataInfo
+	Data VipActiveCodeListInfo `json:"data"`
+}
+
+
 
 @server (
 	group:      device

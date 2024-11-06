@@ -738,11 +738,16 @@ type VipActiveCodeQueryReq struct {
 	SerialNumber *string `json:"serialNumber,optional"`
 }
 
+// swagger:model VipActiveCodeListInfo
+type VipActiveCodeListInfo struct {
+	BaseListInfo
+	Data []VipActiveCode `json:"data"`
+}
+
 // swagger:model VipActiveCodeListResp
 type VipActiveCodeListResp struct {
 	BaseDataInfo
-	BaseListInfo
-	Data []VipActiveCode `json:"data"`
+	Data VipActiveCodeListInfo `json:"data"`
 }
 
 type ReplyReqVo struct {
